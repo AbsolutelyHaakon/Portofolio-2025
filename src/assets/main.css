@@ -1,11 +1,9 @@
 @import './base.css';
 
 #app {
-  width: 100vw;
   justify-content: center;
-  padding: 2rem;
   font-weight: normal;
-  font-family: "Arial Nova", sans-serif;
+  font-family: Inter, sans-serif;
 }
 
 
@@ -13,10 +11,5 @@
   body {
     display: flex;
 
-  }
-
-  #app {
-    display: flex;
-    padding: 0 2rem;
   }
 }

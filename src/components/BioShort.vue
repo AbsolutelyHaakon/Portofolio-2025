@@ -1,17 +1,17 @@
 <script setup>
-const profileImage = 'src/assets/images/qualifications/profilePic.jpg';
+const profileImage = 'images/qualifications/profilePic.jpg';
 const name = 'Håkon Svensen Karlsen';
 const title = 'Bachelor i ingeniørfag, data';
 const city = 'NTNU Ålesund';
 const email = "haakonsk@live.no";
 const qualifications = [
-  {name: 'Flutter' ,image: 'src/assets/images/qualifications/flutter.png'},
-  { name: 'Vue.js', image: 'src/assets/images/qualifications/vue.png' },
-  { name: 'JavaScript', image: 'src/assets/images/qualifications/js.png' },
-  { name: 'HTML', image: 'src/assets/images/qualifications/html.png' },
-  { name: 'CSS', image: 'src/assets/images/qualifications/css.png' },
-  {name: 'TS', image: 'src/assets/images/qualifications/ts.png'},
-  {name: 'SQL', image: 'src/assets/images/qualifications/sql.png'},
+  {name: 'Flutter' ,image: 'images/qualifications/flutter.png'},
+  { name: 'Vue.js', image: 'images/qualifications/vue.png' },
+  { name: 'JavaScript', image: 'images/qualifications/js.png' },
+  { name: 'HTML', image: 'images/qualifications/html.png' },
+  { name: 'CSS', image: 'images/qualifications/css.png' },
+  {name: 'TS', image: 'images/qualifications/ts.png'},
+  {name: 'SQL', image: 'images/qualifications/sql.png'},
 ];const biography = 'Student på 24 år som fullfører bachelor ved NTNU Ålesund. God erfaring fra en rekke prosjekter og praksis i IT-Firma. Denne siden detaljerer prosjektene og arbeidserfaringen jeg mener er relevant for fremtidig arbeid. Oppdateringer på ulike prosjekter finnes også her.';
 </script>
 
