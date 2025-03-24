@@ -32,7 +32,23 @@ const projects = [
         ' Matti Kjellstadli og Adrian Johansen har vært med på å utvikle prosjektet.',
     languages: ['vue', 'js', 'sql'],
     color: "#F06961FF",
+    features: [
+      {
+        image: '/images/projects/wws.png',
+        title: 'Monte Carlo Simulering',
+        description: 'Webapplikasjonen benytter seg av tusenvis av simuleringer med endrede variabler i arbeidsdagen ' +
+            'for å estimere forventet tidsbruk på de ulike delene av arbeidsdagen. ' +
+            'Dette gir managere god oversikt over oppgavene som utføres og tiden de tar. ' +
+            'Gode estimasjoner fører til økt effektivitet blandt varehusearbeidere'
+      },
+      {
+        image: '/images/projects/wws.png',
+        title: 'Selvlærende Algoritme',
+        description: 'Description of feature 2.'
+      }
+    ]
   },
+  // Add more projects as needed
   {
     id: 2,
     title: 'Project Title 2',
@@ -68,6 +84,17 @@ onMounted(() => {
   <div v-else>
     <p>Project not found.</p>
   </div>
+  <div class="features" v-if="project.title">
+    <div v-for="(feature, index) in project.features" :key="index" :class="['feature', { 'feature-left': index % 2 === 0 }]">
+      <div class="feature-content">
+        <h2 class="subtitle" :style="{margin: 0, color: project.color}">{{ feature.title }}</h2>
+        <p>{{ feature.description }}</p>
+      </div>
+      <div class="feature-image"  :style="{ '--project-color': project.color }">
+        <img :src="feature.image" alt="Feature Image" class="circular-image"/>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -76,8 +103,7 @@ onMounted(() => {
   flex-direction: row;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
-  margin: 100px 0;
+  margin: 100px 0 175px 0;
   padding: 20px;
   text-align: center;
   gap: 50px;
@@ -178,10 +204,71 @@ onMounted(() => {
   color: #555;
   text-align: right;
   font-size: 1rem;
-
   line-height: 1.5;
   text-indent: -2em;
   padding-left: 2em;
+}
+
+.features {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+  gap: 175px;
+  width: 100%;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 900px;
+  max-width: 1200px;
+  margin: auto;
+  flex-direction: row-reverse;
+  gap:60px
+}
+
+.feature-left{
+  flex-direction: row;
+}
+
+.feature-content {
+  flex: 1;
+  text-align: left;
+  background-color: #f5f5f5;
+  padding: 40px;
+  border-radius: 40px;
+}
+
+.feature-image {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  position: relative;
+}
+
+.feature-image::before {
+  content: '';
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, var(--project-color) 40%, transparent 40%) 0 0 / 10px 10px;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-5px, -5px);
+}
+
+.circular-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 p {

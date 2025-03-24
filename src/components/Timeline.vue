@@ -53,7 +53,7 @@
               <h3>{{ item.title }}</h3>
               <p class="timeline-date">{{ item.date }}</p>
               <p>{{ item.description }}</p>
-              <router-link :to="`/project/?id=${item.id}`" class="view-more">Lær Mer</router-link>
+              <router-link :to="`/project/?id=${item.id}`" class="view-more" >Lær Mer</router-link>
             </div>
           </div>
         </div>
