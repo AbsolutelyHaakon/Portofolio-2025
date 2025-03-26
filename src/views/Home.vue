@@ -34,8 +34,4 @@ header {
   text-align: center;
 }
 
-.timeline-container {
-  position: relative;
-  top: -350px;
-}
 </style>

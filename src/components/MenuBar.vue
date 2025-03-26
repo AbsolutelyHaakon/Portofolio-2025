@@ -3,10 +3,10 @@ import { ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
 const menuItems = ref([
-  { name: 'Home', path: '/home', color: '#2d363e' },
-  { name: 'About', path: '/about' },
-  { name: 'Projects', path: '/project' },
-  { name: 'Contact', path: '/contact' }
+  { name: 'Hjem', path: '/home', color: '#2d363e' },
+  { name: 'CV', path: '/CV' },
+  { name: 'Prosjekt', path: '/project' },
+  { name: 'Kontakt', path: '/contact' }
 ]);
 
 const route = useRoute();

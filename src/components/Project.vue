@@ -48,13 +48,33 @@ const projects = [
       }
     ]
   },
-  // Add more projects as needed
   {
     id: 2,
-    title: 'Project Title 2',
-    image: '@/assets/images/projects/placeholder.png',
-    description: 'This is a detailed description of project 2.',
-    languages: ['html', 'css'],
+    title: 'Afasia',
+    subtitle: 'Skreddersydd Språktrening',
+    period: 'Vår 2025',
+    image: '/images/projects/afasia.png',
+    description: 'WWS er et bachelorprosjekt i samarbeid med Solwr Solutions AS. ' +
+        'Prosjektet anvender Monte Carlo simulering og maskinlæring for å optimalisere lagerflyt.' +
+        'WWS er utviklet med Vue som frontend, Java som backend og mySQL som databaselagringsløsning.' +
+        ' Matti Kjellstadli og Adrian Johansen har vært med på å utvikle prosjektet.',
+    languages: ['flutter', 'sql', 'firebase'],
+    color: "#06c0ff",
+    features: [
+      {
+        image: '/images/projects/wws.png',
+        title: 'Monte Carlo Simulering',
+        description: 'Webapplikasjonen benytter seg av tusenvis av simuleringer med endrede variabler i arbeidsdagen ' +
+            'for å estimere forventet tidsbruk på de ulike delene av arbeidsdagen. ' +
+            'Dette gir managere god oversikt over oppgavene som utføres og tiden de tar. ' +
+            'Gode estimasjoner fører til økt effektivitet blandt varehusearbeidere'
+      },
+      {
+        image: '/images/projects/wws.png',
+        title: 'Selvlærende Algoritme',
+        description: 'Description of feature 2.'
+      }
+    ]
   },
   // Add more projects as needed
 ];
@@ -156,24 +176,22 @@ onMounted(() => {
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+  background-color: #dce3d4 ;
 }
 
 
 .language-icon:nth-child(1) {
   transform: translate(225px, -60px);
-  background-color: #badaa0;
   padding: 10px
 }
 
 .language-icon:nth-child(2) {
   transform: translate(130px, 0px);
-  background-color: #dad2a0;
   padding: 10px
 }
 
 .language-icon:nth-child(3) {
   transform: translate(15px, 50px);
-  background-color: #d8daa0;
   padding: 10px
 }
 

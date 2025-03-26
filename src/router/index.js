@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router';
 import App from "@/App.vue";
 import Project from "@/components/Project.vue";
 import Home from "@/views/Home.vue";
+import CV from "@/views/CV.vue";
 
 const routes = [
     {
@@ -12,6 +13,11 @@ const routes = [
         path: '/home',
         name: 'Home',
         component: Home,
+    },
+    {
+        path: '/CV',
+        name: 'CV',
+        component: CV,
     },
     {
         path: '/project',
@@ -27,7 +33,7 @@ const router = createRouter({
         if (savedPosition) {
             return savedPosition;
         } else {
-            return { top: 0 };
+            return {top: 0};
         }
     },
 });

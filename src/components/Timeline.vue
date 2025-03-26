@@ -42,6 +42,7 @@
     </script>
 
     <template>
+      <h1 class="topptext">Min Tidslinje</h1>
       <div class="timeline">
         <div v-for="(item, index) in timelineItems" :key="index"
              :class="['timeline-item', { 'timeline-item-right': index % 2 === 0 }]">
@@ -61,6 +62,12 @@
     </template>
 
     <style scoped>
+    .topptext {
+      text-align: center;
+      margin: -50px 0 30px 0;
+      color: #FF5733;
+      font-weight: bolder;
+    }
     .timeline {
       display: flex;
       flex-direction: column;
