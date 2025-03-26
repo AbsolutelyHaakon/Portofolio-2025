@@ -20,7 +20,7 @@
         id: 3,
         date: 'Høst 2024',
         title: 'Fitness App - Personlig treningsapplikasjon',
-        image: 'images/projectC.jpg',
+        image: 'images/projects/fitnessapp.png',
         description: 'Mobilapplikasjon laget i Flutter for mobilutviklingsfag ved NTNU. Applikasjonen lar en bruker planlegge, skape og dele treningsøkter.',
       },
       {

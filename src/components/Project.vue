@@ -76,7 +76,36 @@ const projects = [
       }
     ]
   },
-  // Add more projects as needed
+  {
+    id: 3,
+    title: 'Fitness App',
+    subtitle: 'Personlig Treningsapp for iOS & Android',
+    period: 'Vår 2025',
+    image: '/images/projects/fitnessapp.png',
+    description: 'WWS er et bachelorprosjekt i samarbeid med Solwr Solutions AS. ' +
+        'Prosjektet anvender Monte Carlo simulering og maskinlæring for å optimalisere lagerflyt.' +
+        'WWS er utviklet med Vue som frontend, Java som backend og mySQL som databaselagringsløsning.' +
+        ' Matti Kjellstadli og Adrian Johansen har vært med på å utvikle prosjektet.',
+    languages: ['flutter', 'sql', 'firebase'],
+    primarycolor: "#2B2B2B",
+    color: "#48CD6D",
+    textcolor: "#FFFFFF",
+    features: [
+      {
+        image: '/images/projects/fitnessapp.png',
+        title: 'Monte Carlo Simulering',
+        description: 'Webapplikasjonen benytter seg av tusenvis av simuleringer med endrede variabler i arbeidsdagen ' +
+            'for å estimere forventet tidsbruk på de ulike delene av arbeidsdagen. ' +
+            'Dette gir managere god oversikt over oppgavene som utføres og tiden de tar. ' +
+            'Gode estimasjoner fører til økt effektivitet blandt varehusearbeidere'
+      },
+      {
+        image: '/images/projects/fitnessapp.png',
+        title: 'Selvlærende Algoritme',
+        description: 'Description of feature 2.'
+      }
+    ]
+  },
 ];
 
 onMounted(() => {
@@ -86,7 +115,7 @@ onMounted(() => {
 
 <template>
   <div class="project-detail" v-if="project.title">
-    <div class="image-container" :style="{ '--project-color': project.color }">
+    <div class="image-container" :style="{ '--project-color': project.color, backgroundColor: project.primarycolor }">
       <img :src="project.image" alt="Project Image" class="main-image"/>
       <div class="language-icons">
         <img v-for="(lang, index) in project.languages" :key="index" :src="`/images/qualifications/${lang}.png`"
@@ -106,11 +135,11 @@ onMounted(() => {
   </div>
   <div class="features" v-if="project.title">
     <div v-for="(feature, index) in project.features" :key="index" :class="['feature', { 'feature-left': index % 2 === 0 }]">
-      <div class="feature-content">
+      <div class="feature-content" :style="{backgroundColor: project.primarycolor, color: project.textcolor}">
         <h2 class="subtitle" :style="{margin: 0, color: project.color}">{{ feature.title }}</h2>
         <p>{{ feature.description }}</p>
       </div>
-      <div class="feature-image"  :style="{ '--project-color': project.color }">
+      <div class="feature-image"  :style="{ '--project-color': project.color, backgroundColor: project.primarycolor }">
         <img :src="feature.image" alt="Feature Image" class="circular-image"/>
       </div>
     </div>
