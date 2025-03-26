@@ -150,6 +150,7 @@ const isSelected = (work) => {
 
 <template>
   <div class="cv-container">
+    <h1 class="page-title">Min Karrieretidslinje</h1>
     <div class="timeline">
       <div class="line"></div>
       <div
@@ -194,6 +195,12 @@ const isSelected = (work) => {
 
 <style scoped>
 
+.page-title {
+  font-size: 3rem;
+  font-weight: bolder;
+  text-align: center;
+  margin: 20px 0;
+}
 a {
   color: #FF5733;
 }
