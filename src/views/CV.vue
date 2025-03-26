@@ -8,8 +8,8 @@ const timelineData = [
     subtitle: 'Distribusjontransportør',
     description: 'Under studietiden ved NTNU Ålesund har jeg hovedsaklig jobbet som distribusjontransportør for Veøy Møre. ' +
         'Under studietiden har jeg arbeidet mellom en til to ganger i uka og fulle sommrer. ' +
-        'Hovedoppgaven består rundt distribusjon av privat, bedrift og medisinvarer. ',
-    date: '2023 - 2025',
+        'Hovedoppgaven består rundt distribusjon av privat, bedrift og medisinvarer. Ønsker du refernsenummer? Ta kontakt med meg først. ',
+    date: '2023 - Nå',
     image: 'images/cv/veoy.png',
     referenceName: 'Leif Kåre Nogva',
     referenceTitle: 'Daglig leder',
@@ -36,12 +36,105 @@ const timelineData = [
       'Databasestrukturer',
     ]
   },
-  {id: 3, title: 'Insoft AS', description: 'Description for Job 2', date: 'OKT 2024'},
-  {id: 4, title: 'Medvind Assistanse ', description: 'Description for Job 2', date: '2022'},
-  {id: 5, title: 'Teknobingo', description: 'Description for Job 3', date: '2020 - 2022'},
-  {id: 6, title: 'NTNU Trondheim', description: 'Description for Job 4', date: '2019 - 2020'},
-  {id: 7, title: 'Mio BPA', description: 'Description for Job 4', date: '2021'},
-  {id: 8, title: 'Mandal Kommune', description: 'Description for Job 5', date: '2019 - 2020'},
+  {
+    id: 3,
+    title: 'Insoft AS',
+    subtitle: 'Praksis Oktober 2024',
+    description: 'Praksis i sammenheng med IDATA2505 med over 120 praksistimer hos en IT-Bedrift.' +
+        'Praksisen i Insoft ga meg innsikt i arbeidslivet som en utvikler og ga meg god erfaring i TypeScript og SQL samt det å jobbe i større team.' +
+        'Insoft ga meg en arbeidsdasg på lik linje med andre ansatte så regelmessige standup- og ledermøter var standard i praksisperioden.',
+    date: 'OKT 2024',
+    image: 'images/cv/insoft.png',
+    referenceName: 'Robin Helland',
+    referenceTitle: 'Prosjektkoordinator',
+    referenceURL: 'https://drive.google.com/file/d/1lgEAOcB7rE2L7oMlv20fOOfEGVtMdQBt/view?usp=sharing',
+    qualifications: [
+      'Industrierfaring i Typescript',
+      'Erfaring i store datasystemer',
+      'Arbeid i større teams',
+      'Ukentlige standup- og ledermøter',
+    ],
+  },
+  {
+    id: 4,
+    title: 'Medvind Assistanse ',
+    subtitle: 'Personlig Assistent',
+    description: 'Personlig assistent for barn med celebral parese. ' +
+        'Viktig og utfordrende arbeid der man setter andres behov først for å sikre at de kan ' +
+        'oppleve en hverdag på lik linje med andre. ' +
+        'Givende arbeid som gir god innblikk i de ulike utfordringene mennesker med nedsettelser opplever i hverdagen.',
+    date: '2022',
+    image: 'images/cv/medvind.png',
+    qualifications: [
+      'Innlblikk i en utfordrende hverdag',
+      'Kommunikasjonsbyggende arbeid',
+    ],
+  },
+  {
+    id: 5,
+    title: 'Teknobingo',
+    subtitle: 'Bingovert',
+    description: 'Ansatt i Teknobingo Heimdal og Orkanger i perioden 2020 - 2022 da jeg var mellom studier. ' +
+        'Inneholdt salg, vasking og vedlikehold på bingohaller. ' +
+        'Selvstending arbeid som krever god kommunikasjonsevne da kunder går igjennom både seier og tap, noen større enn andre.',
+    date: '2020 - 2022',
+    image: 'images/cv/teknobingo.png',
+    referenceName: 'Camilla Reppe Nordli',
+    referenceTitle: 'Daglig leder',
+    qualifications: [
+      'Salgserfaring',
+      'Behandling av varierende kundesituasjoner',
+      'Pengehåndetering',
+    ],
+  },
+  {
+    id: 6,
+    title: 'NTNU Trondheim',
+    subtitle: 'Økonomi - Bachelor',
+    description: 'Fullførte 1 år på økonomistudiet ved NTNU i Trondheim.' +
+        ' God innsikt i bedriftsøkonomi. ' +
+        'Alle fag bestått første året før jeg fant ut at en karriere innenfor økonomiske sektorer ikke passet meg. ' +
+        'Emner som rettslære, bedrifts- og samfunnsøkonomi kommer godt med i utvikling av økonomiske programvarer.',
+    date: '2019 - 2020',
+    image: 'images/cv/ntnu.png',
+    topics: [
+      'Bedriftslære',
+      'Makro- og mikroøkonomi',
+      'Rettslære',
+      'Samfunnsøkonomi',
+    ]
+  },
+  {
+    id: 7,
+    title: 'Mio BPA',
+    subtitle: 'Personlig Assistent',
+    description: 'Personlig assistent for eldre mann som nylig ble lammet grunnet skade under fall. ' +
+        'Var med på prossessen i å flytte han fra midlertidlig boplass til et renovert skreddersydd hjem laget for hans behov. ' +
+        'Min tidligere erfaringen innenfor assitanse kom godt med for å sørge at overgangen, prosessen og pleien var av god standard. ',
+    date: '2021',
+    image: 'images/cv/mio.png',
+    qualifications: [
+      'Pleie og omsorg for krevende bruker',
+      'Tilpassningsutfordringer i forhold til hjemflyttning'
+    ]
+  },
+  {
+    id: 8,
+    title: 'Mandal Kommune',
+    subtitle: 'Pleiearbeider på kommunale boliger',
+    description: 'Toårig sommerjob som pleieassistent for to brukere på kommunale boliger. ' +
+        'Stort behov for assistanse i hverdagen som følge av blandt annet sterk epilepsi og språkvansker. ' +
+        'Arbeidsoppgaver var blant annet personlig stell, matlaging, vasking, reising. ' +
+        'Ekstremt givende og viktig arbeid som jeg fikk oppleve tidlig i arbeidslivet mitt.',
+    date: '2019 - 2020',
+    image: 'images/cv/lindesnes.png',
+    qualifications: [
+      'Personlig stell',
+      'Matlaging',
+      'Vasking',
+      'Generell assistanse'
+    ]
+  },
 ];
 
 const selectedWork = ref(timelineData[0]);
@@ -78,15 +171,17 @@ const isSelected = (work) => {
         <p class="selected-description">{{ selectedWork.description }}</p>
       </div>
       <div class="selected-details">
-        <h3 class="selected-details-title" v-if="!selectedWork.title.includes('NTNU')">Referanse</h3>
+        <h3 class="selected-details-title" v-if="!selectedWork.title.includes('NTNU')&& selectedWork.referenceTitle">
+          Referanse</h3>
         <h3 class="selected-details-title" v-if="selectedWork.title.includes('NTNU')">Hovedemner</h3>
-        <div class="h-divider"></div>
-        <p class="selected-details-line">{{ selectedWork.referenceName }}</p>
+        <div class="h-divider" v-if="selectedWork.referenceTitle"></div>
+        <p class="selected-details-line" style="font-size: 1rem; font-weight: bold">{{ selectedWork.referenceName }}</p>
         <p class="selected-details-line">{{ selectedWork.referenceTitle }}</p>
+        <a v-if="selectedWork.referenceURL" :href="selectedWork.referenceURL" target="_blank">Referansedokument</a>
         <ul v-if="selectedWork.title.includes('NTNU')">
           <li v-for="(topic, index) in selectedWork.topics" :key="index">{{ topic }}</li>
         </ul>
-        <div class="h-divider" v-if="!selectedWork.title.includes('NTNU')"></div>
+        <div class="h-divider" v-if="!selectedWork.title.includes('NTNU') && selectedWork.referenceTitle"></div>
         <h3 class="selected-details-title" style="margin-bottom: 10px" v-if="!selectedWork.title.includes('NTNU')">
           Utbytte</h3>
         <ul>
@@ -98,6 +193,11 @@ const isSelected = (work) => {
 </template>
 
 <style scoped>
+
+a {
+  color: #FF5733;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -128,30 +228,31 @@ li::before {
 }
 
 .selected-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bolder;
   text-align: left;
 }
 
 .selected-description {
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   max-width: 450px;
 }
 
 .selected-details {
+  font-size: 1.1rem;
   margin-top: 10px;
   text-align: center;
 }
 
 .selected-details-title {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: bolder;
 }
 
 .selected-subtitle {
   color: #FF5733;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   text-align: left;
   margin: -12px 0 0 10px;
@@ -189,13 +290,14 @@ li::before {
 
 .line {
   position: absolute;
-  top: 47%;
+  top: 32px;
   left: 0;
   right: 0;
   height: 2px;
   background-color: #2c3e50;
   z-index: -1;
 }
+
 
 .timeline-point {
   cursor: pointer;
@@ -218,7 +320,7 @@ li::before {
   border-radius: 50%;
   margin-bottom: 5px;
   position: relative;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .circle.selected {
@@ -234,7 +336,7 @@ li::before {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 100px;
+  gap: 150px;
   text-align: center;
   padding: 20px;
   border-radius: 10px;
