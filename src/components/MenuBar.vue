@@ -15,7 +15,7 @@ const route = useRoute();
 
 <template>
   <div class="menu-bar"
-       :style="{ backgroundColor: route.path === '/home' ? '#2C363F' : 'transparent', color: route.path === '/home' ? '#F2F5EA' : 'inherit' }">
+       >
     <router-link
         v-for="(item, index) in menuItems"
         :key="index"
