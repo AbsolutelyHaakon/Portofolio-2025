@@ -67,6 +67,7 @@
       margin: -50px 0 30px 0;
       color: #FF5733;
       font-weight: bolder;
+      font-size: 2.5rem;
     }
     .timeline {
       display: flex;
@@ -97,8 +98,8 @@
       height: 3px;
       background: repeating-linear-gradient(
           90deg,
-          #A24936,
-          #A24936 10px,
+          #FF5733,
+          #FF5733 10px,
           #ffffff 10px,
           #ffffff 20px
       );
@@ -174,7 +175,7 @@
     .view-more {
       display: block;
       text-align: right;
-      color: #A24936;
+      color: #FF5733;
       text-decoration: none;
       margin-top: 10px;
     }
