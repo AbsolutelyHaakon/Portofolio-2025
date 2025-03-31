@@ -170,7 +170,7 @@ ul li {
 .qualification-box {
   display: flex;
   justify-items: center;
-  margin: 100px auto 250px auto;
+  margin: 100px auto 50px auto;
   gap: 10px;
   flex-direction: column;
   max-width: 1100px;

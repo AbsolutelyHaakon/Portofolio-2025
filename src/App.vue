@@ -7,7 +7,6 @@ import BottomBar from "@/components/BottomBar.vue";
 <template>
   <MenuBar></MenuBar>
   <router-view></router-view>
-  <BottomBar></BottomBar>
 </template>
 
 <style scoped>

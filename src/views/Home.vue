@@ -3,6 +3,7 @@
       import Timeline from "@/components/Timeline.vue";
       import {useRouter} from "vue-router";
       import {onMounted, ref} from "vue";
+      import Links from "@/components/Links.vue";
 
       const router = useRouter();
       const showTimeline = ref(false);
