@@ -1,5 +1,6 @@
 <script setup>
 import {ref, onMounted} from 'vue';
+import Timeline from "@/components/Timeline.vue";
 
 const profileImage = 'images/qualifications/profilePic.jpg';
 const name = 'Håkon Svensen Karlsen';
@@ -11,8 +12,15 @@ const qualifications = [
   {name: 'CSS', image: 'images/qualifications/css.png'},
   {name: 'TS', image: 'images/qualifications/ts.png'},
   {name: 'SQL', image: 'images/qualifications/sql.png'},
+  {name: 'Dart', image: 'images/qualifications/dart.png'},
+  {name: 'Firebase', image: 'images/qualifications/firebase.png'},
 ];
-const biography = 'En student på 24 år som fullfører bachelor ved NTNU Ålesund. God erfaring fra en rekke prosjekter og praksis i IT-Firma. Denne siden detaljerer prosjektene og arbeidserfaringen jeg mener er relevant for fremtidig arbeid. Oppdateringer på ulike prosjekter finnes også her.';
+
+const logos = [
+  {url: 'https://github.com', image: 'images/external/github.png'},
+  {url: 'https://linkedin.com', image: 'images/external/linkedin.png'},
+  {url: 'https://twitter.com', image: 'images/external/x.png'},
+];
 
 const nameRef = ref(null);
 const showBio = ref(false);
@@ -50,18 +58,18 @@ onMounted(() => {
       <img :src="profileImage" alt="Profile" class="profile-image" ref="profileImageRef"/>
     </div>
     <div class="right">
-      <p class="intro">Hei, jeg er</p>
+      <p class="intro">Hello, I am</p>
       <h2 class="name" ref="nameRef"></h2>
-      <p :class="{ bio: true, 'bio-visible': showBio }">{{ biography }}</p>
+      <h3 class="intro" style="margin-top: -20px">An aspiring full-stack developer</h3>
     </div>
   </div>
-  <div class="qualification-box" :class="{ 'qualifications-visible': showQualifications }">
-    <h2>Hovedkvalifikasjoner</h2>
-    <ul class="strengths">
-      <li v-for="qualification in qualifications" :key="qualification.name">
-        <img :src="qualification.image" :alt="qualification.name" class="strengths-image"/>
-      </li>
-    </ul>
+  <div class="logos">
+    <div v-for="(logo, index) in logos" :key="index" class="logo-item">
+      <a :href="logo.url" target="_blank">
+        <img :src="logo.image" :alt="logo.name" class="logo-image"/>
+      </a>
+      <div v-if="index < logos.length - 1" class="separator"></div>
+    </div>
   </div>
 </template>
 
@@ -72,7 +80,7 @@ onMounted(() => {
   padding: 20px;
   max-width: 1200px;
   margin: 10px auto;
-  height: 400px;
+  height: 300px;
 }
 
 .left {
@@ -81,15 +89,14 @@ onMounted(() => {
 }
 
 .profile-image {
-  width: 400px;
-  height: 400px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
   opacity: 0;
   transition: opacity 1s ease-in;
 }
-
 
 .profile-image.fade-in {
   opacity: 1;
@@ -107,12 +114,12 @@ onMounted(() => {
 
 .name {
   margin: -15px 0 0 0;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #FF5733;
+  font-size: 4rem;
+  font-weight: bolder;
+  color: #3D5B59;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 0.1em solid #FF5733;
+  border-right: 0.1em solid #3D5B59;
   animation: blink-caret 1.25s step-end infinite;
   min-height: 3rem;
 }
@@ -122,7 +129,7 @@ onMounted(() => {
     border-color: transparent;
   }
   50% {
-    border-color: #FF5733;
+    border-color: #3D5B59;
   }
 }
 
@@ -130,21 +137,7 @@ onMounted(() => {
   margin: 0;
   font-size: 1.5rem;
   font-weight: bolder;
-  color: #2c3e50;
-}
-
-.bio {
-  max-width: 500px;
-  margin: -10px 0 0 0;
-  text-align: left;
-  font-size: 1.2rem;
-  color: #2c3e50;
-  opacity: 0;
-  transition: opacity 1s ease-in;
-}
-
-.bio-visible {
-  opacity: 1;
+  color: #2E1F27;
 }
 
 h2, h3, h4 {
@@ -160,79 +153,62 @@ ul li {
   margin-bottom: 5px;
 }
 
-.strengths-image {
-  width: 70px;
-  height: 70px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.strengths-image:hover {
-  transform: scale(1.4);
-}
-
-.strengths {
+.logos {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  min-width: 100%;
-  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
+  min-width: 300px;
+  max-width: 500px;
+  margin:auto;
 }
 
-.qualification-box {
+.logo-item {
   display: flex;
-  justify-items: center;
-  margin: 100px auto 150px auto;
-  gap: 10px;
-  flex-direction: column;
-  max-width: 1200px;
-  opacity: 0;
-  transition: opacity 1s ease-in;
+  align-items: center;
 }
 
-.qualifications-visible {
-  opacity: 1;
+.logo-image {
+  width: 50px;
+  height: 50px;
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.UT {
-  text-align: left;
-  margin: 0 0 0 25px;
+.logo-image:hover {
+  filter: hue-rotate(90deg) brightness(0.99);
+  transform: scale(1.1);
 }
 
+.separator {
+  width: 2px;
+  height: 75px;
+  background-color: #3D5B59;
+  border-radius: 1px;
+  margin: 0 40px;
+}
 
 @media (max-width: 1200px) {
   .profile-image {
     width: 250px;
     height: 250px;
   }
+
   .right {
     padding-left: 10px;
   }
+
   .intro {
     font-size: 1.2rem;
   }
+
   .name {
     font-size: 2.5rem;
-  }
-  .bio-visible {
-    font-size: 1rem;
   }
 
   .bio-box {
     height: 300px;
     justify-content: center;
   }
-
-  .strengths-image {
-    width: 50px;
-    height: 50px;
-  }
-
-  .strengths {
-    padding: 0 80px;;
-    max-width: 100vw;
-  }
-
 
 }
 </style>

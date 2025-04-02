@@ -42,7 +42,7 @@
     </script>
 
     <template>
-      <h1 class="topptext">Min Tidslinje</h1>
+      <h1 class="topptext">Mine Prosjekter</h1>
       <div class="timeline">
         <div v-for="(item, index) in timelineItems" :key="index"
              :class="['timeline-item', { 'timeline-item-right': index % 2 === 0 }]">
@@ -179,4 +179,40 @@
       text-decoration: none;
       margin-top: 10px;
     }
-    </style>
+
+@media (max-width: 1200px) {
+      .timeline {
+        align-items: flex-start;
+        max-width: 80%;
+      }
+
+      .timeline-item {
+        justify-content: flex-start;
+        width: 100%;
+      }
+
+      .timeline-item::before {
+        display: none;
+      }
+
+      .timeline::after {
+        display: none;
+      }
+
+      .timeline-content {
+        width: 100%;
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .timeline-item:nth-child(even) .view-more {
+        text-align: left;
+        position: static;
+        margin-top: 10px;
+      }
+    }    </style>

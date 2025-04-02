@@ -3,8 +3,8 @@
 #app {
   justify-content: center;
   font-weight: normal;
-  font-family: "Euphemia UCAS", sans-serif;
-  background-color: white;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  background-color: #ffffff;
   color: #333;
   z-index: 1;
 }
