@@ -6,6 +6,7 @@ import {onMounted, ref} from "vue";
 import BioV2 from "@/components/BioV2.vue";
 import TimelineV2 from "@/components/TimelineV2.vue";
 import TimelineV3 from "@/components/TimelineV3.vue";
+import CV2 from "@/components/CV2.vue";
 
 const router = useRouter();
 const showTimeline = ref(false);
@@ -56,6 +57,7 @@ const qualifications = [
     <div class="timeline-container">
       <TimelineV3/>
     </div>
+    <CV2/>
   </main>
 </template>
 <style scoped>

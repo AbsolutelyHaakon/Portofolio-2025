@@ -5,8 +5,8 @@
 
     const icons = ref([
       { image: 'images/pill/home.png', target: '#home' },
-      { image: 'images/pill/projects.png', target: '#work' },
-      { image: 'images/pill/cv.png', target: '#contact' }
+      { image: 'images/pill/projects.png', target: '#timeline' },
+      { image: 'images/pill/cv.png', target: '#cv' }
     ]);
 
     const scrollToSection = (target) => {
