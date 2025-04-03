@@ -121,7 +121,7 @@ header {
   align-items: center;
   flex-wrap: wrap;
   margin: 50px auto;
-  max-width: 1200px;
+  max-width: 1000px;
 }
 
 .qualification-item {
