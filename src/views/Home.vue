@@ -4,6 +4,8 @@ import Timeline from "@/components/Timeline.vue";
 import {useRouter} from "vue-router";
 import {onMounted, ref} from "vue";
 import BioV2 from "@/components/BioV2.vue";
+import TimelineV2 from "@/components/TimelineV2.vue";
+import TimelineV3 from "@/components/TimelineV3.vue";
 
 const router = useRouter();
 const showTimeline = ref(false);
@@ -52,7 +54,7 @@ const qualifications = [
       </div>
     </div>
     <div class="timeline-container">
-      <Timeline/>
+      <TimelineV3/>
     </div>
   </main>
 </template>
