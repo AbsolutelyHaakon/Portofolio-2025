@@ -30,7 +30,7 @@
         id: 4,
         date: 'Spring 2024',
         title: 'Learniverse Connect - Learning Platform',
-        image: 'images/projects/learniverse1.png',
+        image: 'images/projects/learniversecover.png',
         description: 'Web application written in HTML, CSS, and JavaScript. Learning platform that uses an external API to fetch learning materials.',
       },
     ]);
@@ -120,8 +120,10 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 100%;
+      width: auto;
+      max-width: 100%;
       height: auto;
+      max-height: 200px;
       opacity: 0.5;
       transform: translate(-50%, -50%) rotate(-10deg);
       z-index: 0;
@@ -176,7 +178,7 @@
               <h3>{{ item.title }}</h3>
               <p class="timeline-date">{{ item.date }}</p>
               <p>{{ item.description }}</p>
-              <router-link :to="`/projects/id?=${item.id}`" class="view-more">View More</router-link>
+              <router-link :to="`/project/?id=${item.id}`" class="view-more">View More</router-link>
             </div>
             <img :src="item.image" alt="Project Background Image" class="timeline-background-image"/>
           </div>

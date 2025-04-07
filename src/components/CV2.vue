@@ -303,7 +303,13 @@ li::before {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #2c3e50;
+  background: repeating-linear-gradient(
+      to right,
+      #b5e5cf,
+      #b5e5cf 5px,
+      transparent 5px,
+      transparent 10px
+  );
   z-index: -1;
 }
 
