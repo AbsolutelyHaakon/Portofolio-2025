@@ -31,9 +31,9 @@ const projects = [
         'WWS er utviklet med Vue som frontend, Java som backend og mySQL som databaselagringsløsning.' +
         ' Matti Kjellstadli og Adrian Johansen har vært med på å utvikle prosjektet.',
     languages: ['vue', 'js', 'sql'],
-    color: ["#F06961FF", "#d3716a", "#2C3E50"],
+    color: ["#F06961FF", "#d3716a", "#2C3E50", "#FFF"],
     images: [{
-      image: '/images/projects/wws.png',
+      image: '/images/projects/wws1.png',
       title: 'Monte Carlo Simulering',
       description: 'Webapplikasjonen benytter seg av tusenvis av simuleringer med endrede variabler i arbeidsdagen ' +
           'for å estimere forventet tidsbruk på de ulike delene av arbeidsdagen. ' +
@@ -41,17 +41,12 @@ const projects = [
           'Gode estimasjoner fører til økt effektivitet blandt varehusearbeidere'
     },
       {
-        image: '/images/projects/wws.png',
+        image: '/images/projects/wws2.png',
         title: 'Selvlærende Algoritme',
         description: 'Description of feature 2.'
       },
       {
-        image: '/images/projects/wws.png',
-        title: 'Selvlærende Algoritme',
-        description: 'Description of feature 2.'
-      },
-      {
-        image: '/images/projects/wws.png',
+        image: '/images/projects/wws3.png',
         title: 'Selvlærende Algoritme',
         description: 'Description of feature 2.'
       },
@@ -128,9 +123,9 @@ onMounted(() => {
   <div class="project-detail" v-if="project.title">
     <div class="image-container" :style="{ '--project-color': project.color, backgroundColor: project.primarycolor }">
       <img :src="project.image" alt="Project Image" class="main-image"/>
-      <div class="language-icons">
+      <div class="language-icons" >
         <img v-for="(lang, index) in project.languages" :key="index" :src="`/images/qualifications/${lang}.png`"
-             :alt="lang" class="language-icon"/>
+             :alt="lang" class="language-icon" :style="{backgroundColor:project.color[1]}"/>
       </div>
     </div>
     <div class="content">
@@ -143,7 +138,7 @@ onMounted(() => {
   </div>
   <Wave :colors="project.color"/>
   <ImageGallery :images="project.images" v-if="project.images && project.images.length > 0"
-                :background-color="project.color[2]" :text-color="project.color[0]"/>
+                :background-color="project.color[2]" :text-color="project.color[3]" :title-color="project.color[0]"/>
   />
 </template>
 
@@ -206,7 +201,7 @@ onMounted(() => {
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  background-color: #dce3d4;
+  background-color: #e3dbd4;
 }
 
 
