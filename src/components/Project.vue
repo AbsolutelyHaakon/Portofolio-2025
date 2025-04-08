@@ -4,6 +4,9 @@ import {useRoute} from 'vue-router';
 import router from "@/router/index.js";
 import ImageGallery from "@/components/ImageGallery.vue";
 import Wave from "@/components/Wave.vue";
+import UpsideDownWave from "@/components/UpsideDownWave.vue";
+import Gant from "@/components/Gant.vue";
+import OtherProjects from "@/components/OtherProjects.vue";
 
 const route = useRoute();
 const project = ref({});
@@ -22,48 +25,53 @@ const fetchProjectId = async () => {
 const projects = [
   {
     id: 1,
-    title: 'Bacheloroppgaven ',
+    title: 'Bachelor Thesis ',
     subtitle: 'Warehouse Workflow Manager',
     period: 'Vår 2025',
     image: '/images/projects/wws.png',
-    description: 'WWS er et bachelorprosjekt i samarbeid med Solwr Solutions AS. ' +
-        'Prosjektet anvender Monte Carlo simulering og maskinlæring for å optimalisere lagerflyt.' +
-        'WWS er utviklet med Vue som frontend, Java som backend og mySQL som databaselagringsløsning.' +
-        ' Matti Kjellstadli og Adrian Johansen har vært med på å utvikle prosjektet.',
+    description: "WWS is a bachelor's project in collaboration with Solwr Solutions AS. " +
+        "The project applies Monte Carlo simulation and machine learning to optimize warehouse workflows. " +
+        "WWS is developed with Vue as the frontend, Java as the backend, and MySQL as the database solution. " +
+        "Matti Kjellstadli and Adrian Johansen have contributed to the development of the project.",
     languages: ['vue', 'js', 'sql'],
     color: ["#F06961FF", "#d3716a", "#2C3E50", "#FFF"],
-    images: [{
-      image: '/images/projects/wws1.png',
-      title: 'Monte Carlo Simulering',
-      description: 'Webapplikasjonen benytter seg av tusenvis av simuleringer med endrede variabler i arbeidsdagen ' +
-          'for å estimere forventet tidsbruk på de ulike delene av arbeidsdagen. ' +
-          'Dette gir managere god oversikt over oppgavene som utføres og tiden de tar. ' +
-          'Gode estimasjoner fører til økt effektivitet blandt varehusearbeidere'
-    },
+    images: [
+      {
+        image: '/images/projects/wws1.png',
+        title: 'Optimize Warehouse Workflow',
+        description: 'Warehouse Workflow Manager empowers managers with a clear and intuitive ' +
+            'drag-and-drop interface to assign workers to their designated zones. ' +
+            'With a comprehensive visual layout, it eliminates confusion and ensures ' +
+            'everyone knows exactly where and how tasks are being carried out.'
+      },
       {
         image: '/images/projects/wws2.png',
-        title: 'Selvlærende Algoritme',
-        description: 'Description of feature 2.'
+        title: 'Monte Carlo Simulering',
+        description: 'The web application runs thousands of simulations with adjusted variables throughout the workday ' +
+            'to estimate the expected time spent on different tasks. This gives managers a clear overview of the tasks ' +
+            'being performed and how long they take. Accurate time estimates help improve efficiency among warehouse workers.'
       },
       {
         image: '/images/projects/wws3.png',
         title: 'Selvlærende Algoritme',
-        description: 'Description of feature 2.'
+        description: 'The web application uses a self-learning algorithm that continuously improves its predictions based on historical data. ' +
+            'This means that the more the application is used, the better it becomes at estimating time and optimizing workflows.'
       },
-    ]
+    ],
+    gant: '/images/projects/wws/wwsgant.png',
+    repo: 'https://github.com/mattkje/group01-bachelor-2025'
   },
   {
     id: 2,
     title: 'Afasia',
-    subtitle: 'Skreddersydd Språktrening',
+    subtitle: 'Tailored Language Training',
     period: 'Vår 2025',
     image: '/images/projects/afasia.png',
-    description: 'WWS er et bachelorprosjekt i samarbeid med Solwr Solutions AS. ' +
-        'Prosjektet anvender Monte Carlo simulering og maskinlæring for å optimalisere lagerflyt.' +
-        'WWS er utviklet med Vue som frontend, Java som backend og mySQL som databaselagringsløsning.' +
-        ' Matti Kjellstadli og Adrian Johansen har vært med på å utvikle prosjektet.',
+    description: 'Afasia offers a tailord learning experience for individuals suffering from aphasia or have similar training needs. ' +
+        'The application offers a variety of unique and customizable training exercises which challenge the users word recognition and ' +
+        'language skills. The application is designed to be user-friendly and intuitive, making it easy for users to navigate and access the exercises.',
     languages: ['flutter', 'sql', 'firebase'],
-    color: "#06c0ff",
+    color: ["#06c0ff", "#5bb2d2", "#2B2D42", "#FFFFFF"],
     features: [
       {
         image: '/images/projects/wws.png',
@@ -78,7 +86,8 @@ const projects = [
         title: 'Selvlærende Algoritme',
         description: 'Description of feature 2.'
       }
-    ]
+    ],
+    repo: 'https://github.com/AbsolutelyHaakon/Afasia',
   },
   {
     id: 3,
@@ -121,9 +130,10 @@ onMounted(() => {
 
 <template>
   <div class="project-detail" v-if="project.title">
-    <div class="image-container" :style="{ '--project-color': project.color, backgroundColor: project.primarycolor }">
+    <div class="image-container"
+         :style="{ '--project-color': project.color[0], backgroundColor: project.primarycolor }">
       <img :src="project.image" alt="Project Image" class="main-image"/>
-      <div class="language-icons" >
+      <div class="language-icons">
         <img v-for="(lang, index) in project.languages" :key="index" :src="`/images/qualifications/${lang}.png`"
              :alt="lang" class="language-icon" :style="{backgroundColor:project.color[1]}"/>
       </div>
@@ -134,11 +144,25 @@ onMounted(() => {
       <div class="description">
         <p>{{ project.description }}</p>
       </div>
+      <a v-if="project.repo" :href="project.repo" target="_blank" class="github-button"
+         :style="{backgroundColor: project.color[2]}">
+        <img src="/images/external/githubwhite.png" alt="GitHub Logo" class="github-logo"/>
+        <span>GitHub</span>
+      </a>
     </div>
   </div>
   <Wave :colors="project.color"/>
   <ImageGallery :images="project.images" v-if="project.images && project.images.length > 0"
                 :background-color="project.color[2]" :text-color="project.color[3]" :title-color="project.color[0]"/>
+  <UpsideDownWave :colors="project.color"/>
+  <Gant v-if="project.gant" :text-color="project.color[0]" header-text="Gannt Diagram" :image-url="project.gant"/>
+  <Wave :colors="project.color"/>
+  <OtherProjects
+      :projects="projects"
+      :currentProjectId="project.id"
+      :project-box-bg-color="project.color && project.color[2] ? project.color[2] : '#FFF'"
+      :project-box-text-color="project.color && project.color[3] ? project.color[3] : '#FFF'"
+      :title-color="project.color && project.color[0] ? project.color[0] : '#FFF'"
   />
 </template>
 
@@ -253,5 +277,32 @@ onMounted(() => {
 
 p {
   font-weight: bold;
+}
+
+.github-button {
+  display: flex;
+  align-items: space;
+  justify-content: center;
+  align-self: flex-end;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.2s;
+  margin-top: 20px;
+}
+
+.github-button:hover {
+  transform: scale(1.05);
+  background-color: #444;
+}
+
+.github-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
 }
 </style>

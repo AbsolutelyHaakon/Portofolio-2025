@@ -61,6 +61,7 @@ const updateContent = () => {
     </div>
     <div class="image-details" v-if="currentTitle || currentDescription" :style="{ color: props.titleColor }">
       <h2 class="image-title">{{ currentTitle }}</h2>
+      <div class="horizontal-divider" :style="{ backgroundColor: props.titleColor}"></div>
       <p class="image-description" :style="{color: props.textColor}">{{ currentDescription }}</p>
     </div>
   </div>
@@ -151,7 +152,7 @@ const updateContent = () => {
   text-align: center;
   transition: opacity 0.5s;
   max-width: 1000px;
-  margin: 20px auto 400px auto;
+  margin: 20px auto 0 auto;
 }
 
 .image-title {
@@ -162,5 +163,14 @@ const updateContent = () => {
 .image-description {
   font-size: 1rem;
   color: #555;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.horizontal-divider {
+  width: 90%;
+  height: 3px;
+  margin: 10px auto;
+  border-radius: 24px;
 }
 </style>
