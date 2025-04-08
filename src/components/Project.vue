@@ -125,18 +125,19 @@ const projects = [
     website: 'https://google.com',
   },
   {
-    id: 3,
-    title: 'Fitness App',
-    subtitle: 'Personalized Workout App for iOS and Android',
+    id: 4,
+    title: 'Learniverse Connect',
+    subtitle: 'Unleash Your Learning Journey',
     period: 'Spring 2025',
-    image: '/images/projects/fitnessapp.png',
-    description: 'The Fitness App is a mobile application developed in Flutter for the mobile development course at NTNU. ' +
-        'The app allows users to plan, create, and share workouts. It is designed to be user-friendly and intuitive, making it easy for to complete their workouts',
-    languages: ['flutter', 'sql', 'firebase'],
+    image: '/images/projects/learniversecover.png',
+    description: 'Learniverse Connect is a web-application developed in Vue with a Java backend that let´s you explore a flurry of interesting computer courses provided by other third-party education resources.' +
+        'Learniverse acts as a hub for learning by aggregating courses from various platforms, allowing users to discover and enroll in courses that suit their interests and needs.',
+    languages: ['vue', 'java', 'sql'],
     primarycolor: "#2B2B2B",
-    color: ["#48CD6D", "#7fc993", "#2B2B2B", "#FFFFFF"],
+    color: ["#060610", "#262634", "#5666FF", "#FFFFFF"],
     textcolor: "#FFFFFF",
-    repo: 'https://github.com/AbsolutelyHaakon/FitnessApp-IDATA2503',
+    repo: 'https://github.com/mattkje/course-project-team-5',
+    guidelines: 'https://drive.google.com/file/d/1V2BEHiv6gD-9OTAMy0yJt4XK7ouZ8Iy7/view?usp=sharing',
     images: [
       {
         image: '/images/projects/fitnessapp/fitnessapp1.jpg',
@@ -201,6 +202,85 @@ const projects = [
       },
     ],
   },
+  {
+    id: 3,
+    title: 'Fitness App',
+    subtitle: 'Personalized Workout App for iOS and Android',
+    period: 'Spring 2025',
+    image: '/images/projects/fitnessapp.png',
+    description: 'The Fitness App is a mobile application developed in Flutter for the mobile development course at NTNU. ' +
+        'The app allows users to plan, create, and share workouts. It is designed to be user-friendly and intuitive, making it easy for to complete their workouts',
+    languages: ['flutter', 'sql', 'firebase'],
+    primarycolor: "#2B2B2B",
+    color: ["#48CD6D", "#7fc993", "#2B2B2B", "#FFFFFF"],
+    textcolor: "#FFFFFF",
+    repo: 'https://github.com/AbsolutelyHaakon/FitnessApp-IDATA2503',
+    guidelines: 'https://drive.google.com/file/d/1X6cp7JXRYb5ppM1tNB506aFxgsASPIn-/view?usp=sharing',
+    images: [
+      {
+        image: '/images/projects/fitnessapp/fitnessapp1.jpg',
+        title: 'Complete Workout Experience',
+        description: 'The Fitness App offers a variety of features to enhance the workout experience. ' +
+            'Users can create their own workouts, track their progress, and share their achievements with friends. ' +
+            'The app also includes a social media feature that allows users to connect with other fitness enthusiasts.',
+      },
+      {
+        image: '/images/projects/fitnessapp/fitnessapp2.jpg',
+        title: 'Workout Companion',
+        description: 'During your workout the application tracks your exercises, allowing you to track your progress later.' +
+            ' Break timers ensure you keep a healthy pace during your workout. Notifications notify you once you need to get back on the weights.',
+      },
+      {
+        image: '/images/projects/fitnessapp/fitnessapp3.jpg',
+        title: 'View and Share your Workouts',
+        description: 'The Fitness App allows you to view your workouts and share them with your friends. ' +
+            'You can also view your friends workouts and get inspired by their training routines. ' +
+            'The app also includes a social media feature that allows users to connect with other fitness enthusiasts.',
+      },
+      {
+        image: '/images/projects/fitnessapp/fitnessapp4.jpg',
+        title: 'Custom Workout routines',
+        description: 'Create your own exercises and workouts or choose from a variety of user-made templates.',
+      },
+      {
+        image: '/images/projects/fitnessapp/fitnessapp5.jpg',
+        title: 'Plan your week',
+        description: 'Our calendar feature allows for good planning opportunities to make sure you stay on track in your fitness journey.',
+      },
+      {
+        image: '/images/projects/fitnessapp/fitnessapp6.jpg',
+        title: 'Complete Exercises',
+        description: 'Image and video integration ensures all exercises are easy to learn and understand ',
+      },
+    ],
+    features : [
+      {
+        logo: '/images/projects/fitnessapp/feature1.png',
+        title: 'Cloud Backup',
+      },
+      {
+        logo: '/images/projects/fitnessapp/feature2.png',
+        title: 'Social Integration'
+      },
+      {
+        logo: '/images/projects/fitnessapp/feature3.png',
+        title: 'Complete Customization',
+      },
+      {
+        logo: '/images/projects/fitnessapp/feature4.png',
+        title: 'Workout Tracking',
+      },
+      {
+        logo: '/images/projects/fitnessapp/feature5.png',
+        title: 'Habit Tracking',
+      },
+      {
+        logo: '/images/projects/fitnessapp/feature6.png',
+        title: 'Progress Tracking',
+      },
+    ],
+  },
+
 ];
 
 onMounted(() => {
@@ -236,6 +316,11 @@ onMounted(() => {
            :style="{backgroundColor: project.color[1]}">
           <img src="/images/external/websiteicon.png" alt="Website Icon" class="website-logo"/>
           <span>Website Coming Soon</span>
+        </a>
+        <a v-if="project.guidelines" :href="project.guidelines"  target="_blank" class="website-button"
+           :style="{backgroundColor: project.color[0]}">
+          <img src="/images/external/paintbrush.png" alt="Website Icon" class="website-logo"/>
+          <span>Design Guidelines</span>
         </a>
       </div>
     </div>
