@@ -8,6 +8,7 @@ import UpsideDownWave from "@/components/UpsideDownWave.vue";
 import Gant from "@/components/Gant.vue";
 import OtherProjects from "@/components/OtherProjects.vue";
 import ProjectTimeline from "@/components/ProjectTimeline.vue";
+import OurVision from "@/components/OurVision.vue";
 
 const route = useRoute();
 const project = ref({});
@@ -120,6 +121,7 @@ const projects = [
       }
 
     ],
+    website: 'https://google.com',
   },
   {
     id: 3,
@@ -166,7 +168,7 @@ onMounted(() => {
          :style="{ '--project-color': project.color[0], backgroundColor: project.primarycolor }">
       <img :src="project.image" alt="Project Image" class="main-image"/>
       <div class="language-icons">
-        <img v-for="(lang, index) in project.languages" :key="index" :src="`/images/qualifications/${lang}.png`"
+        <img v-for="(lang, index) in project.languages" :key="index" :src="`/images/qualifications/originals/${lang}.png`"
              :alt="lang" class="language-icon" :style="{backgroundColor:project.color[1]}"/>
       </div>
     </div>
@@ -176,11 +178,18 @@ onMounted(() => {
       <div class="description">
         <p>{{ project.description }}</p>
       </div>
-      <a v-if="project.repo" :href="project.repo" target="_blank" class="github-button"
-         :style="{backgroundColor: project.color[2]}">
-        <img src="/images/external/githubwhite.png" alt="GitHub Logo" class="github-logo"/>
-        <span>GitHub</span>
-      </a>
+      <div class="button-container">
+        <a v-if="project.repo" :href="project.repo" target="_blank" class="github-button"
+           :style="{backgroundColor: project.color[2]}">
+          <img src="/images/external/githubwhite.png" alt="GitHub Logo" class="github-logo"/>
+          <span>GitHub</span>
+        </a>
+        <a v-if="project.website" target="_blank" class="website-button"
+           :style="{backgroundColor: project.color[1]}">
+          <img src="/images/external/websiteicon.png" alt="Website Icon" class="website-logo"/>
+          <span>Website Coming Soon</span>
+        </a>
+      </div>
     </div>
   </div>
   <Wave :colors="project.color"/>
@@ -190,8 +199,7 @@ onMounted(() => {
   <Gant v-if="project.gant" :text-color="project.color[0]" header-text="Gannt Diagram" :image-url="project.gant"/>
   <ProjectTimeline :timeline="project.timelineData" v-if="project.timelineData && project.timelineData.length > 0"/>
   <Wave :colors="project.color"/>
-
-
+  <OurVision v-if="project.id === 2"/>
 </template>
 
 <style scoped>
@@ -309,7 +317,7 @@ p {
 
 .github-button {
   display: flex;
-  align-items: space;
+  align-items: center;
   justify-content: center;
   align-self: flex-end;
   gap: 10px;
@@ -332,5 +340,40 @@ p {
   width: 24px;
   height: 24px;
   border-radius: 50%;
+}
+
+.website-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.2s;
+  margin-top: 20px;
+}
+
+.website-button:hover {
+  transform: scale(1.05);
+  background-color: #444;
+}
+
+.website-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-self: flex-end;
 }
 </style>
