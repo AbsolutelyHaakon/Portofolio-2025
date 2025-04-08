@@ -9,6 +9,7 @@ import Gant from "@/components/Gant.vue";
 import OtherProjects from "@/components/OtherProjects.vue";
 import ProjectTimeline from "@/components/ProjectTimeline.vue";
 import OurVision from "@/components/OurVision.vue";
+import KeyFeatures from "@/components/KeyFeatures.vue";
 
 const route = useRoute();
 const project = ref({});
@@ -126,32 +127,79 @@ const projects = [
   {
     id: 3,
     title: 'Fitness App',
-    subtitle: 'Personlig Treningsapp for iOS & Android',
-    period: 'Vår 2025',
+    subtitle: 'Personalized Workout App for iOS and Android',
+    period: 'Spring 2025',
     image: '/images/projects/fitnessapp.png',
-    description: 'WWS er et bachelorprosjekt i samarbeid med Solwr Solutions AS. ' +
-        'Prosjektet anvender Monte Carlo simulering og maskinlæring for å optimalisere lagerflyt.' +
-        'WWS er utviklet med Vue som frontend, Java som backend og mySQL som databaselagringsløsning.' +
-        ' Matti Kjellstadli og Adrian Johansen har vært med på å utvikle prosjektet.',
+    description: 'The Fitness App is a mobile application developed in Flutter for the mobile development course at NTNU. ' +
+        'The app allows users to plan, create, and share workouts. It is designed to be user-friendly and intuitive, making it easy for to complete their workouts',
     languages: ['flutter', 'sql', 'firebase'],
     primarycolor: "#2B2B2B",
-    color: "#48CD6D",
+    color: ["#48CD6D", "#7fc993", "#2B2B2B", "#FFFFFF"],
     textcolor: "#FFFFFF",
-    features: [
+    repo: 'https://github.com/AbsolutelyHaakon/FitnessApp-IDATA2503',
+    images: [
       {
-        image: '/images/projects/fitnessapp.png',
-        title: 'Monte Carlo Simulering',
-        description: 'Webapplikasjonen benytter seg av tusenvis av simuleringer med endrede variabler i arbeidsdagen ' +
-            'for å estimere forventet tidsbruk på de ulike delene av arbeidsdagen. ' +
-            'Dette gir managere god oversikt over oppgavene som utføres og tiden de tar. ' +
-            'Gode estimasjoner fører til økt effektivitet blandt varehusearbeidere'
+        image: '/images/projects/fitnessapp/fitnessapp1.jpg',
+        title: 'Complete Workout Experience',
+        description: 'The Fitness App offers a variety of features to enhance the workout experience. ' +
+            'Users can create their own workouts, track their progress, and share their achievements with friends. ' +
+            'The app also includes a social media feature that allows users to connect with other fitness enthusiasts.',
       },
       {
-        image: '/images/projects/fitnessapp.png',
-        title: 'Selvlærende Algoritme',
-        description: 'Description of feature 2.'
-      }
-    ]
+        image: '/images/projects/fitnessapp/fitnessapp2.jpg',
+        title: 'Workout Companion',
+        description: 'During your workout the application tracks your exercises, allowing you to track your progress later.' +
+            ' Break timers ensure you keep a healthy pace during your workout. Notifications notify you once you need to get back on the weights.',
+      },
+      {
+        image: '/images/projects/fitnessapp/fitnessapp3.jpg',
+        title: 'View and Share your Workouts',
+        description: 'The Fitness App allows you to view your workouts and share them with your friends. ' +
+            'You can also view your friends workouts and get inspired by their training routines. ' +
+            'The app also includes a social media feature that allows users to connect with other fitness enthusiasts.',
+      },
+      {
+        image: '/images/projects/fitnessapp/fitnessapp4.jpg',
+        title: 'Custom Workout routines',
+        description: 'Create your own exercises and workouts or choose from a variety of user-made templates.',
+      },
+      {
+        image: '/images/projects/fitnessapp/fitnessapp5.jpg',
+        title: 'Plan your week',
+        description: 'Our calendar feature allows for good planning opportunities to make sure you stay on track in your fitness journey.',
+      },
+      {
+        image: '/images/projects/fitnessapp/fitnessapp6.jpg',
+        title: 'Complete Exercises',
+        description: 'Image and video integration ensures all exercises are easy to learn and understand ',
+      },
+    ],
+    features : [
+      {
+        logo: '/images/projects/fitnessapp/feature1.png',
+        title: 'Cloud Backup',
+      },
+      {
+        logo: '/images/projects/fitnessapp/feature2.png',
+        title: 'Social Integration'
+      },
+      {
+        logo: '/images/projects/fitnessapp/feature3.png',
+        title: 'Complete Customization',
+      },
+      {
+        logo: '/images/projects/fitnessapp/feature4.png',
+        title: 'Workout Tracking',
+      },
+      {
+        logo: '/images/projects/fitnessapp/feature5.png',
+        title: 'Habit Tracking',
+      },
+      {
+        logo: '/images/projects/fitnessapp/feature6.png',
+        title: 'Progress Tracking',
+      },
+    ],
   },
 ];
 
@@ -198,6 +246,7 @@ onMounted(() => {
   <UpsideDownWave :colors="project.color"/>
   <Gant v-if="project.gant" :text-color="project.color[0]" header-text="Gannt Diagram" :image-url="project.gant"/>
   <ProjectTimeline :timeline="project.timelineData" v-if="project.timelineData && project.timelineData.length > 0"/>
+  <KeyFeatures :features="project.features" v-if="project.id === 3"/>
   <Wave :colors="project.color"/>
   <OurVision v-if="project.id === 2"/>
 </template>
