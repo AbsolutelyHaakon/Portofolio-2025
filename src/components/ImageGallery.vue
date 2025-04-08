@@ -101,7 +101,8 @@ const updateContent = () => {
   position: absolute;
   width: 60vw;
   aspect-ratio: 16 / 9;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   transition: transform 0.5s, opacity 0.5s;
 }

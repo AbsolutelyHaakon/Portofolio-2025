@@ -7,6 +7,7 @@ import Wave from "@/components/Wave.vue";
 import UpsideDownWave from "@/components/UpsideDownWave.vue";
 import Gant from "@/components/Gant.vue";
 import OtherProjects from "@/components/OtherProjects.vue";
+import ProjectTimeline from "@/components/ProjectTimeline.vue";
 
 const route = useRoute();
 const project = ref({});
@@ -72,22 +73,53 @@ const projects = [
         'language skills. The application is designed to be user-friendly and intuitive, making it easy for users to navigate and access the exercises.',
     languages: ['flutter', 'sql', 'firebase'],
     color: ["#06c0ff", "#5bb2d2", "#2B2D42", "#FFFFFF"],
-    features: [
+    images: [
       {
-        image: '/images/projects/wws.png',
-        title: 'Monte Carlo Simulering',
-        description: 'Webapplikasjonen benytter seg av tusenvis av simuleringer med endrede variabler i arbeidsdagen ' +
-            'for å estimere forventet tidsbruk på de ulike delene av arbeidsdagen. ' +
-            'Dette gir managere god oversikt over oppgavene som utføres og tiden de tar. ' +
-            'Gode estimasjoner fører til økt effektivitet blandt varehusearbeidere'
+        image: '/images/projects/afasia/afasia1.png',
+        title: 'Tailored Learning Experience',
+        description: 'Afasia is developed with the needs of the user in mind. The flexible application allows for multiple ways to train and learn.' +
+            'Audio, text, and image-based exercises are all available to the user to ensure that it suits everyone. ' +
+            'Create quizzes on your own or use our ready-made templates to guide your learning experience.',
       },
       {
-        image: '/images/projects/wws.png',
-        title: 'Selvlærende Algoritme',
-        description: 'Description of feature 2.'
-      }
+        image: '/images/projects/afasia/afasia2.png',
+        title: 'Tailored Learning Experience',
+        description: 'Afasia is developed with the needs of the user in mind. The flexible application allows for multiple ways to train and learn.' +
+            'Audio, text, and image-based exercises are all available to the user to ensure that it suits everyone. ' +
+            'Create quizzes on your own or use our ready-made templates to guide your learning experience.',
+      },
+      {
+        image: '/images/projects/afasia/afasia.png',
+        title: 'Tailored Learning Experience',
+        description: 'Afasia is developed with the needs of the user in mind. The flexible application allows for multiple ways to train and learn.' +
+            'Audio, text, and image-based exercises are all available to the user to ensure that it suits everyone. ' +
+            'Create quizzes on your own or use our ready-made templates to guide your learning experience.',
+      },
     ],
     repo: 'https://github.com/AbsolutelyHaakon/Afasia',
+    timelineData: [
+      {
+        date: 'February 2025',
+        title: 'Project Kickoff',
+        live: true,
+      },
+      {
+        date: 'June 2025',
+        title: 'Alpha Stage',
+        milestones: ['Good Range of Quizzes', 'Customizable Exercises', 'Ready made template games'],
+      },
+      {
+        date: 'June - July 2025',
+        title: 'Testing Phase',
+        milestones: ['Testing with LHL', 'Feedback Collection'],
+      },
+      {
+        date: 'July - August 2025',
+        title: 'Release',
+        milestones: ['Final Adjustments', 'Launch on App Store and Play Store', 'Collaboration with LHL and other organizations'],
+      }
+
+    ],
   },
   {
     id: 3,
@@ -156,14 +188,10 @@ onMounted(() => {
                 :background-color="project.color[2]" :text-color="project.color[3]" :title-color="project.color[0]"/>
   <UpsideDownWave :colors="project.color"/>
   <Gant v-if="project.gant" :text-color="project.color[0]" header-text="Gannt Diagram" :image-url="project.gant"/>
+  <ProjectTimeline :timeline="project.timelineData" v-if="project.timelineData && project.timelineData.length > 0"/>
   <Wave :colors="project.color"/>
-  <OtherProjects
-      :projects="projects"
-      :currentProjectId="project.id"
-      :project-box-bg-color="project.color && project.color[2] ? project.color[2] : '#FFF'"
-      :project-box-text-color="project.color && project.color[3] ? project.color[3] : '#FFF'"
-      :title-color="project.color && project.color[0] ? project.color[0] : '#FFF'"
-  />
+
+
 </template>
 
 <style scoped>
