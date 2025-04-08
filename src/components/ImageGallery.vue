@@ -53,7 +53,17 @@ const updateContent = () => {
       <button class="scroll-button left" @click="scrollLeft">‹</button>
       <div class="image-container">
         <div v-for="(image, index) in props.images" :key="index"
-             :class="['image-item', { 'center': index === currentIndex, 'left': (index + 1) % props.images.length === currentIndex, 'right': (index - 1 + props.images.length) % props.images.length === currentIndex }]"
+             :class="[
+               'image-item',
+               {
+                 'center': index === currentIndex,
+                 'left': (index + 1) % props.images.length === currentIndex,
+                 'right': (index - 1 + props.images.length) % props.images.length === currentIndex,
+                 'hidden': index !== currentIndex &&
+                           (index + 1) % props.images.length !== currentIndex &&
+                           (index - 1 + props.images.length) % props.images.length !== currentIndex
+               }
+             ]"
              :style="{ backgroundImage: `url(${image.image})` }">
         </div>
       </div>
@@ -123,6 +133,12 @@ const updateContent = () => {
   transform: scale(0.8) translateX(250px);
   z-index: 1;
   opacity: 0.5;
+}
+
+.image-item.hidden {
+  transform: scale(0.6) translateX(0);
+  z-index: 0;
+  opacity: 0.2;
 }
 
 .scroll-button {

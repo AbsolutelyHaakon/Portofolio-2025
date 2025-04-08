@@ -140,65 +140,53 @@ const projects = [
     guidelines: 'https://drive.google.com/file/d/1V2BEHiv6gD-9OTAMy0yJt4XK7ouZ8Iy7/view?usp=sharing',
     images: [
       {
-        image: '/images/projects/fitnessapp/fitnessapp1.jpg',
-        title: 'Complete Workout Experience',
-        description: 'The Fitness App offers a variety of features to enhance the workout experience. ' +
-            'Users can create their own workouts, track their progress, and share their achievements with friends. ' +
-            'The app also includes a social media feature that allows users to connect with other fitness enthusiasts.',
+        image: '/images/projects/learniverse/learniverse1.png',
+        title: 'Digital Learning Hub',
+        description: 'Learniverse Connect collects a large amount of learning resources from various platforms, ' +
+            'allowing users to discover and enroll in courses that suit their interests and needs. ' +
+            'The application is designed to be user-friendly and intuitive, making it easy for users to navigate and access the courses.',
       },
       {
-        image: '/images/projects/fitnessapp/fitnessapp2.jpg',
-        title: 'Workout Companion',
-        description: 'During your workout the application tracks your exercises, allowing you to track your progress later.' +
-            ' Break timers ensure you keep a healthy pace during your workout. Notifications notify you once you need to get back on the weights.',
+        image: '/images/projects/learniverse/learniverse2.png',
+        title: 'Physical & Digital Courses',
+        description: 'Learniverse offers a range of physical and digital courses, including our very own "Learniverse Plus" courses. ' +
+            'These courses are designed to provide users with a comprehensive learning experience, combining both online and offline resources.',
       },
       {
-        image: '/images/projects/fitnessapp/fitnessapp3.jpg',
-        title: 'View and Share your Workouts',
-        description: 'The Fitness App allows you to view your workouts and share them with your friends. ' +
-            'You can also view your friends workouts and get inspired by their training routines. ' +
-            'The app also includes a social media feature that allows users to connect with other fitness enthusiasts.',
+        image: '/images/projects/learniverse/learniverse3.png',
+        title: 'In-House Payment',
+        description: 'Learniverse has all features needed to properly evaluate and enroll in courses in-house.',
       },
       {
-        image: '/images/projects/fitnessapp/fitnessapp4.jpg',
-        title: 'Custom Workout routines',
-        description: 'Create your own exercises and workouts or choose from a variety of user-made templates.',
-      },
-      {
-        image: '/images/projects/fitnessapp/fitnessapp5.jpg',
-        title: 'Plan your week',
-        description: 'Our calendar feature allows for good planning opportunities to make sure you stay on track in your fitness journey.',
-      },
-      {
-        image: '/images/projects/fitnessapp/fitnessapp6.jpg',
-        title: 'Complete Exercises',
-        description: 'Image and video integration ensures all exercises are easy to learn and understand ',
+        image: '/images/projects/learniverse/learniverse4.png',
+        title: 'Mobile Friendly',
+        description: 'Learniverse Connect is fully optimized for any device, including mobile!',
       },
     ],
     features : [
       {
-        logo: '/images/projects/fitnessapp/feature1.png',
-        title: 'Cloud Backup',
+        logo: '/images/projects/learniverse/feature1.png',
+        title: 'API Enabled',
       },
       {
-        logo: '/images/projects/fitnessapp/feature2.png',
-        title: 'Social Integration'
+        logo: '/images/projects/learniverse/feature2.png',
+        title: 'Pro and Free Version'
       },
       {
-        logo: '/images/projects/fitnessapp/feature3.png',
-        title: 'Complete Customization',
+        logo: '/images/projects/learniverse/feature3.png',
+        title: 'Secure Authentication',
       },
       {
-        logo: '/images/projects/fitnessapp/feature4.png',
-        title: 'Workout Tracking',
+        logo: '/images/projects/learniverse/feature4.png',
+        title: 'Large Course Library',
       },
       {
-        logo: '/images/projects/fitnessapp/feature5.png',
-        title: 'Habit Tracking',
+        logo: '/images/projects/learniverse/feature5.png',
+        title: 'Compare Provides',
       },
       {
-        logo: '/images/projects/fitnessapp/feature6.png',
-        title: 'Progress Tracking',
+        logo: '/images/projects/learniverse/feature6.png',
+        title: 'Modern Web-Application',
       },
     ],
   },
@@ -331,7 +319,7 @@ onMounted(() => {
   <UpsideDownWave :colors="project.color"/>
   <Gant v-if="project.gant" :text-color="project.color[0]" header-text="Gannt Diagram" :image-url="project.gant"/>
   <ProjectTimeline :timeline="project.timelineData" v-if="project.timelineData && project.timelineData.length > 0"/>
-  <KeyFeatures :features="project.features" v-if="project.id === 3"/>
+  <KeyFeatures :features="project.features" v-if="project.id === 3 || project.id === 4"/>
   <Wave :colors="project.color"/>
   <OurVision v-if="project.id === 2"/>
 </template>
