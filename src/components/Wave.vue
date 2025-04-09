@@ -32,6 +32,7 @@
         position: relative;
         width: 100%;
         min-height: 200px;
+        height: auto;
       }
 
       .svg-bottom,
