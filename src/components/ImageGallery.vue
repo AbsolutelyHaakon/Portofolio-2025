@@ -110,6 +110,7 @@ const updateContent = () => {
 .image-item {
   position: absolute;
   width: 60vw;
+  max-height: 60vh;
   aspect-ratio: 16 / 9;
   background-size: contain;
   background-repeat: no-repeat;

@@ -4,22 +4,9 @@ import Timeline from "@/components/Timeline.vue";
 
 const profileImage = 'images/qualifications/profilePic.jpg';
 const name = 'Håkon Svensen Karlsen';
-const qualifications = [
-  {name: 'Flutter', image: 'images/qualifications/flutter.png'},
-  {name: 'Vue.js', image: 'images/qualifications/vue.png'},
-  {name: 'JavaScript', image: 'images/qualifications/js.png'},
-  {name: 'HTML', image: 'images/qualifications/html.png'},
-  {name: 'CSS', image: 'images/qualifications/css.png'},
-  {name: 'TS', image: 'images/qualifications/ts.png'},
-  {name: 'SQL', image: 'images/qualifications/sql.png'},
-  {name: 'Dart', image: 'images/qualifications/dart.png'},
-  {name: 'Firebase', image: 'images/qualifications/firebase.png'},
-];
-
 const logos = [
   {url: 'https://github.com', image: 'images/external/github.png'},
   {url: 'https://linkedin.com', image: 'images/external/linkedin.png'},
-  {url: 'https://twitter.com', image: 'images/external/x.png'},
 ];
 
 const nameRef = ref(null);
@@ -208,6 +195,37 @@ ul li {
   .bio-box {
     height: 300px;
     justify-content: center;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .left {
+    margin-top: 8px;
+  }
+  .right {
+    padding-left: 0;
+  }
+
+  .intro {
+    font-size: 1.2rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .bio-box {
+    height: 300px;
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 20px;
+    margin-bottom: 50px;
   }
 
 }

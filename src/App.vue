@@ -60,4 +60,10 @@ const showPill = computed(() => route.path === '/home');
   width: 24px;
   height: 24px;
 }
+
+@media (max-width: 700px) {
+  .floating-pill {
+    display: none;
+  }
+}
 </style>

@@ -2,12 +2,13 @@
 import BioShort from "@/components/BioShort.vue";
 import Timeline from "@/components/Timeline.vue";
 import {useRouter} from "vue-router";
-import {onMounted, ref} from "vue";
+import {onMounted, onUnmounted, ref} from "vue";
 import BioV2 from "@/components/BioV2.vue";
 import TimelineV2 from "@/components/TimelineV2.vue";
 import TimelineV3 from "@/components/TimelineV3.vue";
 import CV2 from "@/components/CV2.vue";
 import Wave from "@/components/Wave.vue";
+import CVMobile from "@/components/CVMobile.vue";
 
 const router = useRouter();
 const showTimeline = ref(false);
@@ -35,6 +36,21 @@ const colors = [
   '#b5e5cf',
   '#ffffff',
 ];
+
+const isLargeScreen = ref(false);
+
+const updateScreenSize = () => {
+  isLargeScreen.value = window.innerWidth >= 900;
+};
+
+onMounted(() => {
+  updateScreenSize();
+  window.addEventListener("resize", updateScreenSize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateScreenSize);
+});
 </script>
 <template>
   <main class="background">
@@ -51,7 +67,8 @@ const colors = [
     <div class="timeline-container">
       <TimelineV3/>
     </div>
-    <CV2/>
+    <CV2 v-if="isLargeScreen" />
+    <CVMobile v-if="!isLargeScreen" />
   </main>
 </template>
 <style scoped>
@@ -151,5 +168,29 @@ header {
 
 .timeline-container.fade-in {
   opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .sectionText {
+    font-size: 2rem;
+  }
+
+  .qualification-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .timeline-container {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 500px) {
+  .qualification-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 0;
+  }
+
 }
 </style>

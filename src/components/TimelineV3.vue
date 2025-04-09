@@ -165,6 +165,33 @@
     .view-more:hover {
       background-color: #8fcbb3;
     }
+
+    @media (max-width: 900px) {
+      .sectionText {
+        font-size: 2rem;
+      }
+
+      .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 0;
+      }
+
+      .timeline-dot {
+        display: none;
+      }
+
+      .timeline-content {
+        width: 90%;
+        max-width: none;
+        margin: auto;
+      }
+
+      .timeline-line {
+        display: none;
+      }
+
+    }
     </style>
 
     <template>

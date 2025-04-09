@@ -69,6 +69,7 @@ p {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #ffffff;
-  margin: 0;
+  max-width: 1000px;
+  margin-bottom: 20px;
 }
 </style>

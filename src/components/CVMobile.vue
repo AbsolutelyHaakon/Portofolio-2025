@@ -1,5 +1,5 @@
 <script setup>
-import {ref, computed} from 'vue';
+import { ref } from 'vue';
 
 const timelineData = [
   {
@@ -136,126 +136,66 @@ const timelineData = [
     ]
   },
 ];
-
-const selectedWork = ref(timelineData[0]);
-
-const selectWork = (work) => {
-  selectedWork.value = work;
-};
-
-const isSelected = (work) => {
-  return selectedWork.value.id === work.id;
-};
 </script>
 
 <template>
+  <h2 class="topptext" id="cv">Work & Education History</h2>
   <div class="cv-container">
-    <div class="timeline">
-      <div class="line"></div>
-      <div
-          v-for="work in timelineData"
-          :key="work.id"
-          class="timeline-point"
-          @click="selectWork(work)"
-      >
-        <div class="work-title">{{ work.title }}</div>
-        <div :class="['circle', { 'selected': isSelected(work) }]"></div>
-        <div class="date">{{ work.date }}</div>
-      </div>
-    </div>
-    <div class="work-details">
+    <div v-for="work in timelineData" :key="work.id" class="work-details">
       <div class="left-side">
-        <img :src="selectedWork.image" alt="Work" class="selected-image"/>
-        <h2 class="selected-title">{{ selectedWork.title }}</h2>
-        <h3 class="selected-subtitle">{{ selectedWork.subtitle }}</h3>
-        <p class="selected-description">{{ selectedWork.description }}</p>
+        <img :src="work.image" alt="Work" class="selected-image" />
+        <h2 class="selected-title">{{ work.title }}</h2>
+        <h3 class="selected-subtitle">{{ work.subtitle }}</h3>
+        <p class="selected-description">{{ work.description }}</p>
       </div>
       <div class="selected-details">
-        <h3 class="selected-details-title" v-if="!selectedWork.title.includes('NTNU')&& selectedWork.referenceTitle">
-          Referanse</h3>
-        <h3 class="selected-details-title" v-if="selectedWork.title.includes('NTNU')">Hovedemner</h3>
-        <div class="h-divider" v-if="selectedWork.referenceTitle"></div>
-        <p class="selected-details-line" style="font-size: 1rem; font-weight: bold">{{ selectedWork.referenceName }}</p>
-        <p class="selected-details-line">{{ selectedWork.referenceTitle }}</p>
-        <a v-if="selectedWork.referenceURL" :href="selectedWork.referenceURL" target="_blank">Referansedokument</a>
-        <ul v-if="selectedWork.title.includes('NTNU')">
-          <li v-for="(topic, index) in selectedWork.topics" :key="index">{{ topic }}</li>
+        <h3 class="selected-details-title" v-if="work.title.includes('NTNU')">Hovedemner</h3>
+        <ul v-if="work.title.includes('NTNU')">
+          <li v-for="(topic, index) in work.topics" :key="index">{{ topic }}</li>
         </ul>
-        <div class="h-divider" v-if="!selectedWork.title.includes('NTNU') && selectedWork.referenceTitle"></div>
-        <h3 class="selected-details-title" style="margin-bottom: 10px" v-if="!selectedWork.title.includes('NTNU')">
-          Utbytte</h3>
+        <h3 class="selected-details-title" v-if="!work.title.includes('NTNU') && work.referenceTitle">Referanse</h3>
+        <p class="selected-details-line" style="font-size: 1rem; font-weight: bold">{{ work.referenceName }}</p>
+        <p class="selected-details-line">{{ work.referenceTitle }}</p>
+        <a v-if="work.referenceURL" :href="work.referenceURL" target="_blank">Referansedokument</a>
+        <h3 class="selected-details-title" style="margin-bottom: 10px" v-if="!work.title.includes('NTNU')">Utbytte</h3>
         <ul>
-          <li v-for="(qualification, index) in selectedWork.qualifications" :key="index">{{ qualification }}</li>
+          <li v-for="(qualification, index) in work.qualifications" :key="index">{{ qualification }}</li>
         </ul>
       </div>
+      <div class="horizontal-line"></div>
     </div>
   </div>
 </template>
 
 <style scoped>
-
-a {
-  color: #FF5733;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  text-align: left;
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 10px;
-}
-
-li::before {
-  content: "+";
-  position: absolute;
-  left: 0;
-  color: #FF5733;
-  font-weight: bolder;
-  font-size: 1rem;
-}
-
-.h-divider {
+.cv-container {
   width: 100%;
-  height: 2px;
-  background-color: #2c3e50;
-  margin: 10px 0;
-  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  margin: 0 0 300px 0;
 }
 
-.selected-title {
-  font-size: 3rem;
-  font-weight: bolder;
-  text-align: left;
-}
-
-.selected-description {
-  text-align: left;
-  font-size: 1.3rem;
-  max-width: 450px;
-}
-
-.selected-details {
-  font-size: 1.1rem;
-  margin-top: 10px;
+.work-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 90%;
+  min-width: 300px;
+  max-width: 1200px;
+  position: relative;
+  color: #2E1F27;
 }
 
-.selected-details-title {
-  font-size: 2rem;
-  font-weight: bolder;
-}
-
-.selected-subtitle {
-  color: #FF5733;
-  font-size: 1.5rem;
-  font-weight: bolder;
-  text-align: left;
-  margin: -12px 0 0 10px;
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .selected-image {
@@ -270,101 +210,95 @@ li::before {
   transform: translate(-50%, -50%) rotate(-15deg);
 }
 
-.cv-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  position: relative;
-  margin-top: 0;
-}
-
-.timeline {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 50px 0 20px 0;
-}
-
-.line {
-  position: absolute;
-  top: 32px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #2c3e50;
-  z-index: -1;
-}
-
-
-.timeline-point {
-  cursor: pointer;
-  margin: 0 10px;
+.selected-title {
+  font-size: 2rem;
+  font-weight: bolder;
   text-align: center;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.timeline-point:hover .circle {
-  background-color: #FF5733;
-}
-
-.circle {
-  width: 20px;
-  height: 20px;
-  background-color: #2c3e50;
-  border-radius: 50%;
-  margin-bottom: 5px;
-  position: relative;
-  z-index: 1000;
-}
-
-.circle.selected {
-  background-color: #FF5733;
-}
-
-.date {
-  font-size: 0.8rem;
-  color: #2c3e50;
-}
-
-.work-details {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 150px;
+.selected-description {
   text-align: center;
-  padding: 20px;
-  border-radius: 10px;
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+.selected-details {
+  font-size: 1rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.selected-details-title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+.topptext {
+  text-align: center;
+  color: #3D5B59;
+  font-weight: bolder;
+  font-size: 2rem;
+  margin: 50px auto 20px auto;
+}
+
+.horizontal-line {
   width: 90%;
-  min-width: 300px;
-  max-width: 1200px;
-  position: relative;
-  z-index: 1;
+  height: 3px;
+  background-color: #3D5B59;
+  margin: 20px auto;
+  border-radius: 10px;
+  opacity: 0.5;
 }
 
-.left-side {
-  display: flex;
-  flex-direction: column;
-}
+@media (max-width: 750px) {
+  .selected-description {
+    display: none;
+  }
 
-@media (min-width: 1200px) {
+  h3 {
+    margin-top: -10px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  h1 {
+    color: #2E1F27;
+  }
+
   .cv-container {
-   margin-top: 0;
-  }
-
-  .timeline {
-    margin-top: 0;
+    margin-bottom: 100px;
   }
 }
-
-@media (max-width: 900px) {
-  .topptext {
-
+@media (min-width: 750px) {
+  .work-details {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
   }
+
+  .selected-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .horizontal-line {
+    display: none;
+  }
+  .selected-description {
+    font-size: 1rem;
+  }
+
 }
 </style>

@@ -198,7 +198,7 @@ const isSelected = (work) => {
 .topptext {
   text-align: center;
   margin: 100px 0 30px 0;
-  color: #2c3e50;
+  color: #3D5B59;
   font-weight: bolder;
   font-size: 2.5rem;
 }
@@ -376,5 +376,14 @@ li::before {
   .timeline {
     margin-top: 0;
   }
+}
+
+@media (max-width: 900px) {
+  .topptext {
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+
 }
 </style>
