@@ -1,6 +1,4 @@
 <script setup>
-import MenuBar from "@/components/MenuBar.vue";
-import BottomBar from "@/components/BottomBar.vue";
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 

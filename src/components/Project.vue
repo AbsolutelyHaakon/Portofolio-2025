@@ -6,7 +6,6 @@ import ImageGallery from "@/components/ImageGallery.vue";
 import Wave from "@/components/Wave.vue";
 import UpsideDownWave from "@/components/UpsideDownWave.vue";
 import Gant from "@/components/Gant.vue";
-import OtherProjects from "@/components/OtherProjects.vue";
 import ProjectTimeline from "@/components/ProjectTimeline.vue";
 import OurVision from "@/components/OurVision.vue";
 import KeyFeatures from "@/components/KeyFeatures.vue";
@@ -297,17 +296,17 @@ onMounted(() => {
       <div class="button-container">
         <a v-if="project.repo" :href="project.repo" target="_blank" class="github-button"
            :style="{backgroundColor: project.color[2]}">
-          <img src="/images/external/githubwhite.png" alt="GitHub Logo" class="github-logo"/>
+          <img src="/public/images/external/githubwhite.png" alt="GitHub Logo" class="github-logo"/>
           <span>GitHub</span>
         </a>
         <a v-if="project.website" target="_blank" class="website-button"
            :style="{backgroundColor: project.color[1]}">
-          <img src="/images/external/websiteicon.png" alt="Website Icon" class="website-logo"/>
+          <img src="/public/images/external/websiteicon.png" alt="Website Icon" class="website-logo"/>
           <span>Coming Soon</span>
         </a>
         <a v-if="project.guidelines" :href="project.guidelines"  target="_blank" class="website-button"
            :style="{backgroundColor: project.color[0]}">
-          <img src="/images/external/paintbrush.png" alt="Website Icon" class="website-logo"/>
+          <img src="/public/images/external/paintbrush.png" alt="Website Icon" class="website-logo"/>
           <span>Design Guide</span>
         </a>
       </div>

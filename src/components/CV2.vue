@@ -11,7 +11,7 @@ const timelineData = [
         'Studiet fokuserer hovedsaklig på mobil- og apputvikling, spesielt rundt design og backend for webapplikasjoner. ' +
         'For mer informasjon, se hjemme- og prosjektsidene',
     date: '2022 - 2025',
-    image: 'images/cv/ntnu.png',
+    image: '/images/cv/ntnu.png',
     topics: [
       'Mobilapplikasjonutvikling',
       'Webapplikasjoner',
@@ -27,7 +27,7 @@ const timelineData = [
         'Under studietiden har jeg arbeidet mellom en til to ganger i uka og fulle sommrer. ' +
         'Hovedoppgaven består rundt distribusjon av privat, bedrift og medisinvarer. Ønsker du refernsenummer? Ta kontakt med meg først. ',
     date: '2023 - Nå',
-    image: 'images/cv/veoy.png',
+    image: '/images/cv/veoy.png',
     referenceName: 'Leif Kåre Nogva',
     referenceTitle: 'Daglig leder',
     qualifications: [
@@ -44,7 +44,7 @@ const timelineData = [
         'Praksisen i Insoft ga meg innsikt i arbeidslivet som en utvikler og ga meg god erfaring i TypeScript og SQL samt det å jobbe i større team.' +
         'Insoft ga meg en arbeidsdasg på lik linje med andre ansatte så regelmessige standup- og ledermøter var standard i praksisperioden.',
     date: 'OKT 2024',
-    image: 'images/cv/insoft.png',
+    image: '/images/cv/insoft.png',
     referenceName: 'Robin Helland',
     referenceTitle: 'Prosjektkoordinator',
     referenceURL: 'https://drive.google.com/file/d/1lgEAOcB7rE2L7oMlv20fOOfEGVtMdQBt/view?usp=sharing',
@@ -64,7 +64,7 @@ const timelineData = [
         'oppleve en hverdag på lik linje med andre. ' +
         'Givende arbeid som gir god innblikk i de ulike utfordringene mennesker med nedsettelser opplever i hverdagen.',
     date: '2022',
-    image: 'images/cv/medvind.png',
+    image: '/images/cv/medvind.png',
     qualifications: [
       'Innlblikk i en utfordrende hverdag',
       'Kommunikasjonsbyggende arbeid',
@@ -78,7 +78,7 @@ const timelineData = [
         'Inneholdt salg, vasking og vedlikehold på bingohaller. ' +
         'Selvstending arbeid som krever god kommunikasjonsevne da kunder går igjennom både seier og tap, noen større enn andre.',
     date: '2020 - 2022',
-    image: 'images/cv/teknobingo.png',
+    image: '/images/cv/teknobingo.png',
     referenceName: 'Camilla Reppe Nordli',
     referenceTitle: 'Daglig leder',
     qualifications: [
@@ -96,7 +96,7 @@ const timelineData = [
         'Alle fag bestått første året før jeg fant ut at en karriere innenfor økonomiske sektorer ikke passet meg. ' +
         'Emner som rettslære, bedrifts- og samfunnsøkonomi kommer godt med i utvikling av økonomiske programvarer.',
     date: '2019 - 2020',
-    image: 'images/cv/ntnu.png',
+    image: '/images/cv/ntnu.png',
     topics: [
       'Bedriftslære',
       'Makro- og mikroøkonomi',
@@ -112,7 +112,7 @@ const timelineData = [
         'Var med på prossessen i å flytte han fra midlertidlig boplass til et renovert skreddersydd hjem laget for hans behov. ' +
         'Min tidligere erfaringen innenfor assitanse kom godt med for å sørge at overgangen, prosessen og pleien var av god standard. ',
     date: '2021',
-    image: 'images/cv/mio.png',
+    image: '/images/cv/mio.png',
     qualifications: [
       'Pleie og omsorg for krevende bruker',
       'Tilpassningsutfordringer i forhold til hjemflyttning'
@@ -127,7 +127,7 @@ const timelineData = [
         'Arbeidsoppgaver var blant annet personlig stell, matlaging, vasking, reising. ' +
         'Ekstremt givende og viktig arbeid som jeg fikk oppleve tidlig i arbeidslivet mitt.',
     date: '2019 - 2020',
-    image: 'images/cv/lindesnes.png',
+    image: '/images/cv/lindesnes.png',
     qualifications: [
       'Personlig stell',
       'Matlaging',
@@ -272,7 +272,7 @@ li::before {
   width: 100%;
   max-width: 1200px;
   border-radius: 10px;
-  opacity: 0.1;
+  opacity: 0.3;
   z-index: -1;
   top: 60%;
   left: 50%;

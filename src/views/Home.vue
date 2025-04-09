@@ -1,10 +1,7 @@
 <script setup>
-import BioShort from "@/components/BioShort.vue";
-import Timeline from "@/components/Timeline.vue";
 import {useRouter} from "vue-router";
 import {onMounted, onUnmounted, ref} from "vue";
 import BioV2 from "@/components/BioV2.vue";
-import TimelineV2 from "@/components/TimelineV2.vue";
 import TimelineV3 from "@/components/TimelineV3.vue";
 import CV2 from "@/components/CV2.vue";
 import Wave from "@/components/Wave.vue";
@@ -21,14 +18,14 @@ onMounted(() => {
 });
 
 const qualifications = [
-  {name: 'Flutter', image: 'images/qualifications/flutter.png'},
-  {name: 'Vue.', image: 'images/qualifications/vue.png'},
-  {name: 'JavaScript', image: 'images/qualifications/js.png'},
-  {name: 'HTML', image: 'images/qualifications/html.png'},
-  {name: 'CSS', image: 'images/qualifications/css.png'},
-  {name: 'TS', image: 'images/qualifications/ts.png'},
-  {name: 'SQL', image: 'images/qualifications/sql.png'},
-  {name: 'Python', image: 'images/qualifications/python.png'},
+  {name: 'Flutter', image: '/images/qualifications/flutter.png'},
+  {name: 'Vue.', image: '/images/qualifications/vue.png'},
+  {name: 'JavaScript', image: '/images/qualifications/js.png'},
+  {name: 'HTML', image: '/images/qualifications/html.png'},
+  {name: 'CSS', image: '/images/qualifications/css.png'},
+  {name: 'TS', image: '/images/qualifications/ts.png'},
+  {name: 'SQL', image: '/images/qualifications/sql.png'},
+  {name: 'Python', image: '/images/qualifications/python.png'},
 ];
 
 const colors = [

@@ -1,12 +1,10 @@
 <script setup>
 import {ref, onMounted} from 'vue';
-import Timeline from "@/components/Timeline.vue";
-
-const profileImage = 'images/qualifications/profilePic.jpg';
+const profileImage = '/images/qualifications/profilePic.jpg';
 const name = 'Håkon Svensen Karlsen';
 const logos = [
-  {url: 'https://github.com', image: 'images/external/github.png'},
-  {url: 'https://linkedin.com', image: 'images/external/linkedin.png'},
+  {url: 'https://github.com/AbsolutelyHaakon', image: '/images/external/github.png'},
+  {url: 'https://www.linkedin.com/in/h%C3%A5kon-svensen-karlsen-a19a49348/', image: '/images/external/linkedin.png'},
 ];
 
 const nameRef = ref(null);

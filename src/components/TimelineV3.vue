@@ -9,28 +9,28 @@
         id: 1,
         date: 'Spring 2025',
         title: 'Bachelor Thesis - Warehouse Workflow Manager',
-        image: 'images/projects/wwscover.png',
+        image: '/images/projects/wwscover.png',
         description: 'Bachelor project in collaboration with Solwr Solutions AS. Uses Monte Carlo simulation and machine learning to optimize warehouse flow.',
       },
       {
         id: 2,
         date: '2025 - Present',
         title: 'Afasia - Customized Training Application',
-        image: 'images/projects/afasiacover.png',
+        image: '/images/projects/afasiacover.png',
         description: 'Project in collaboration with the bachelor group. Self-developed application for training specifically designed for aphasia patients or others with similar training needs.',
       },
       {
         id: 3,
         date: 'Fall 2024',
         title: 'Fitness App - Personal Training Application',
-        image: 'images/projects/fitnessappcover.png',
+        image: '/images/projects/fitnessappcover.png',
         description: 'Mobile application made in Flutter for mobile development course at NTNU. The application allows a user to plan, create, and share workouts.',
       },
       {
         id: 4,
         date: 'Spring 2024',
         title: 'Learniverse Connect - Learning Platform',
-        image: 'images/projects/learniversecover.png',
+        image: '/images/projects/learniversecover.png',
         description: 'Web application written in HTML, CSS, and JavaScript. Learning platform that uses an external API to fetch learning materials.',
       },
     ]);
@@ -124,7 +124,6 @@
       max-width: 100%;
       height: auto;
       max-height: 200px;
-      opacity: 0.5;
       transform: translate(-50%, -50%) rotate(-10deg);
       z-index: 0;
       pointer-events: none;
