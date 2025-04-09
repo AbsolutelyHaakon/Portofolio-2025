@@ -106,4 +106,17 @@
     .timeline-item.flashing::before {
       animation: flash 2s infinite;
     }
+
+    @media (max-width: 500px) {
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        font-size: 0.8rem;
+      }
+
+    }
     </style>

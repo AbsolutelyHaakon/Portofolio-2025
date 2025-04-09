@@ -303,12 +303,12 @@ onMounted(() => {
         <a v-if="project.website" target="_blank" class="website-button"
            :style="{backgroundColor: project.color[1]}">
           <img src="/images/external/websiteicon.png" alt="Website Icon" class="website-logo"/>
-          <span>Website Coming Soon</span>
+          <span>Coming Soon</span>
         </a>
         <a v-if="project.guidelines" :href="project.guidelines"  target="_blank" class="website-button"
            :style="{backgroundColor: project.color[0]}">
           <img src="/images/external/paintbrush.png" alt="Website Icon" class="website-logo"/>
-          <span>Design Guidelines</span>
+          <span>Design Guide</span>
         </a>
       </div>
     </div>
@@ -497,5 +497,77 @@ p {
   justify-content: flex-end;
   align-items: flex-end;
   align-self: flex-end;
+}
+
+@media (max-width: 900px) {
+
+  .project-detail {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2%;
+  }
+
+  .image-container {
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    align-self: center;
+    display: none;
+  }
+
+  .image-container:before {
+    width: 290px;
+    height: 290px;
+    display: none;
+  }
+  .project-detail {
+    margin: 40px 0 0 0;
+    gap: 20px
+  }
+
+  .description {
+    text-align: center;
+    padding-left: 0;
+    margin: 0 8%;
+    font-size: 0.9rem;
+  }
+
+  .github-button {
+    margin-top: 15px;
+  }
+
+  .button-container {
+    margin: auto;
+  }
+
+  .content {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .subtitle {
+    margin-left: 0;
+  }
+
+}
+
+@media (max-width: 1050px) {
+
+  .image-container {
+    width: 225px;
+    height: 225px;
+    max-width: 225px;
+    max-height: 225px;
+  }
+
+  .image-container:before {
+    display: none;
+  }
+
 }
 </style>

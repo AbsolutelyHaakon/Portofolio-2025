@@ -49,4 +49,14 @@ defineProps({
   font-weight: bold;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .key-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .feature-logo {
+    width: 40px;
+    height: 40px;
+  }
+}
 </style>

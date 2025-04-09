@@ -72,4 +72,27 @@ p {
   max-width: 1000px;
   margin-bottom: 20px;
 }
+
+@media (max-width: 500px) {
+
+  .vision-container {
+    padding: 0 5% 50px 5%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+}
 </style>

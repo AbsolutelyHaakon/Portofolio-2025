@@ -39,4 +39,22 @@ h1 {
   aspect-ratio: 34 / 12;
   object-fit: cover;
 }
+
+@media (max-width: 500px) {
+
+  .container img {
+    width: 100vw;
+    aspect-ratio: 34 / 12;
+    object-fit: cover;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    margin-bottom: 50px;
+  }
+
+}
 </style>

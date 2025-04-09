@@ -1,28 +1,30 @@
 <script setup>
-import {onMounted, ref, watch} from 'vue';
+import { onMounted, ref, watch } from 'vue';
 
 const props = defineProps({
   images: {
     type: Array,
-    required: true
+    required: true,
   },
   backgroundColor: {
     type: String,
-    required: true
+    required: true,
   },
   textColor: {
     type: String,
-    required: true
+    required: true,
   },
   titleColor: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const currentIndex = ref(0);
 const currentTitle = ref('');
 const currentDescription = ref('');
+const touchStartX = ref(0);
+const touchEndX = ref(0);
 
 const scrollLeft = () => {
   currentIndex.value = (currentIndex.value - 1 + props.images.length) % props.images.length;
@@ -30,6 +32,23 @@ const scrollLeft = () => {
 
 const scrollRight = () => {
   currentIndex.value = (currentIndex.value + 1) % props.images.length;
+};
+
+const handleTouchStart = (event) => {
+  touchStartX.value = event.touches[0].clientX;
+};
+
+const handleTouchMove = (event) => {
+  touchEndX.value = event.touches[0].clientX;
+};
+
+const handleTouchEnd = () => {
+  const deltaX = touchStartX.value - touchEndX.value;
+  if (deltaX > 50) {
+    scrollRight(); // Swipe left
+  } else if (deltaX < -50) {
+    scrollLeft(); // Swipe right
+  }
 };
 
 onMounted(() => {
@@ -48,31 +67,39 @@ const updateContent = () => {
 </script>
 
 <template>
-  <div class="content" :style="{ backgroundColor: props.backgroundColor }">
+  <div
+    class="content"
+    :style="{ backgroundColor: props.backgroundColor }"
+    @touchstart="handleTouchStart"
+    @touchmove="handleTouchMove"
+    @touchend="handleTouchEnd"
+  >
     <div class="image-gallery" :style="{ backgroundColor: props.backgroundColor }">
       <button class="scroll-button left" @click="scrollLeft">‹</button>
       <div class="image-container">
-        <div v-for="(image, index) in props.images" :key="index"
-             :class="[
-               'image-item',
-               {
-                 'center': index === currentIndex,
-                 'left': (index + 1) % props.images.length === currentIndex,
-                 'right': (index - 1 + props.images.length) % props.images.length === currentIndex,
-                 'hidden': index !== currentIndex &&
-                           (index + 1) % props.images.length !== currentIndex &&
-                           (index - 1 + props.images.length) % props.images.length !== currentIndex
-               }
-             ]"
-             :style="{ backgroundImage: `url(${image.image})` }">
-        </div>
+        <div
+          v-for="(image, index) in props.images"
+          :key="index"
+          :class="[
+            'image-item',
+            {
+              'center': index === currentIndex,
+              'left': (index + 1) % props.images.length === currentIndex,
+              'right': (index - 1 + props.images.length) % props.images.length === currentIndex,
+              'hidden': index !== currentIndex &&
+                        (index + 1) % props.images.length !== currentIndex &&
+                        (index - 1 + props.images.length) !== currentIndex,
+            },
+          ]"
+          :style="{ backgroundImage: `url(${image.image})` }"
+        ></div>
       </div>
       <button class="scroll-button right" @click="scrollRight">›</button>
     </div>
     <div class="image-details" v-if="currentTitle || currentDescription" :style="{ color: props.titleColor }">
       <h2 class="image-title">{{ currentTitle }}</h2>
-      <div class="horizontal-divider" :style="{ backgroundColor: props.titleColor}"></div>
-      <p class="image-description" :style="{color: props.textColor}">{{ currentDescription }}</p>
+      <div class="horizontal-divider" :style="{ backgroundColor: props.titleColor }"></div>
+      <p class="image-description" :style="{ color: props.textColor }">{{ currentDescription }}</p>
     </div>
   </div>
 </template>
@@ -190,5 +217,39 @@ const updateContent = () => {
   height: 3px;
   margin: 10px auto;
   border-radius: 24px;
+}
+
+
+@media (max-width: 500px) {
+
+  .image-item {
+    width: 90vw;
+    height: 100%;
+  }
+
+  .scroll-button {
+    font-size: 2rem;
+  }
+
+  .image-title {
+    font-size: 1.2rem;
+  }
+
+  .image-description {
+    font-size: 0.9rem;
+  }
+
+  .scroll-button {
+    display: none;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .image-details {
+    margin-top: 5px;
+  }
 }
 </style>
