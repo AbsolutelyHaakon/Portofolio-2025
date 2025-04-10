@@ -15,7 +15,7 @@
       {
         id: 2,
         date: '2025 - Present',
-        title: 'Afasia - Customized Training Application',
+        title: 'Fluentia - Customized Training Application',
         image: '/images/projects/afasiacover.png',
         description: 'Project in collaboration with the bachelor group. Self-developed application for training specifically designed for aphasia patients or others with similar training needs.',
       },

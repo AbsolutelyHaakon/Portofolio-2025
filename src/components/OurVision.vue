@@ -17,7 +17,7 @@ const visionData = {
     {image: "/images/projects/afasia/problem7.png"},
   ],
   subtitle2: "Our Commitment",
-  description2: ` <span class="highlight">Afasia</span> plans to create an application appropriate for adult learners that has a  <span class="highlight">modern and familiar feel.</span> The application will be extremely flexible to suit the accessibility needs of a large range of users. <span class="highlight">Custom made exercises</span> allow specialists to set up effective and familiar learning environments which contributes to the patients' <span class="highlight">motivation and learning.</span>  The application will be designed to be used in a variety of settings, including at home, in the clinic, or in a group setting. The goal is to create an application that is not only effective but also <span class="highlight">enjoyable</span> to use.`,
+  description2: ` <span class="highlight">Fluentia</span> plans to create an application appropriate for adult learners that has a  <span class="highlight">modern and familiar feel.</span> The application will be extremely flexible to suit the accessibility needs of a large range of users. <span class="highlight">Custom made exercises</span> allow specialists to set up effective and familiar learning environments which contributes to the patients' <span class="highlight">motivation and learning.</span>  The application will be designed to be used in a variety of settings, including at home, in the clinic, or in a group setting. The goal is to create an application that is not only effective but also <span class="highlight">enjoyable</span> to use.`,
 };
 </script>
 

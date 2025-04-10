@@ -65,11 +65,11 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Afasia',
+    title: 'Fluentia',
     subtitle: 'Tailored Language Training',
     period: 'Vår 2025',
     image: '/images/projects/afasia.png',
-    description: 'Afasia offers a tailord learning experience for individuals suffering from aphasia or have similar training needs. ' +
+    description: 'Fluentia offers a tailord learning experience for individuals suffering from aphasia or have similar training needs. ' +
         'The application offers a variety of unique and customizable training exercises which challenge the users word recognition and ' +
         'language skills. The application is designed to be user-friendly and intuitive, making it easy for users to navigate and access the exercises.',
     languages: ['flutter', 'sql', 'firebase'],
@@ -78,21 +78,21 @@ const projects = [
       {
         image: '/images/projects/afasia/afasia1.png',
         title: 'Tailored Learning Experience',
-        description: 'Afasia is developed with the needs of the user in mind. The flexible application allows for multiple ways to train and learn.' +
+        description: 'Fluentia is developed with the needs of the user in mind. The flexible application allows for multiple ways to train and learn.' +
             'Audio, text, and image-based exercises are all available to the user to ensure that it suits everyone. ' +
             'Create quizzes on your own or use our ready-made templates to guide your learning experience.',
       },
       {
         image: '/images/projects/afasia/afasia2.png',
         title: 'Tailored Learning Experience',
-        description: 'Afasia is developed with the needs of the user in mind. The flexible application allows for multiple ways to train and learn.' +
+        description: 'Fluentia is developed with the needs of the user in mind. The flexible application allows for multiple ways to train and learn.' +
             'Audio, text, and image-based exercises are all available to the user to ensure that it suits everyone. ' +
             'Create quizzes on your own or use our ready-made templates to guide your learning experience.',
       },
       {
         image: '/images/projects/afasia/afasia.png',
         title: 'Tailored Learning Experience',
-        description: 'Afasia is developed with the needs of the user in mind. The flexible application allows for multiple ways to train and learn.' +
+        description: 'Fluentia is developed with the needs of the user in mind. The flexible application allows for multiple ways to train and learn.' +
             'Audio, text, and image-based exercises are all available to the user to ensure that it suits everyone. ' +
             'Create quizzes on your own or use our ready-made templates to guide your learning experience.',
       },
