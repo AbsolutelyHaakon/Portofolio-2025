@@ -7,7 +7,7 @@ import CV from "@/views/CV.vue";
 const routes = [
     {
         path: '/',
-        name: 'Hjem',
+        name: 'Home',
         component: Home,
     },
     {
@@ -19,6 +19,10 @@ const routes = [
         path: '/project',
         name: 'Project',
         component: Project,
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        redirect: '/',
     },
 ];
 
