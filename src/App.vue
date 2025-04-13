@@ -18,8 +18,8 @@
     const route = useRoute();
     const router = useRouter();
 
-    const showPill = computed(() => route.path === '/home');
-    const showGoHome = computed(() => route.path !== '/home');
+    const showPill = computed(() => route.path === '/');
+    const showGoHome = computed(() => route.path !== '/');
 
     const goHome = () => {
       router.push('/home');
