@@ -5,134 +5,137 @@ const timelineData = [
   {
     id: 1,
     title: 'NTNU Ålesund ',
-    subtitle: 'Dataingeniør - Bachelor',
-    description: 'Dataingeniørstudiet til NTNU Ålesund gir en god blanding av programmering- og ' +
-        'ingeniørfaglige emner som forbereder deg til arbeidsdagen.' +
-        'Studiet fokuserer hovedsaklig på mobil- og apputvikling, spesielt rundt design og backend for webapplikasjoner. ' +
-        'For mer informasjon, se hjemme- og prosjektsidene',
+    subtitle: 'Computer Science - Bachelor',
+    description: "The CS bachelor program at NTNU Ålesund combines programming and engineering subjects to prepare you for work as a computer engineer. " +
+        "It focuses on mobile and app development, especially design and backend for web applications. " +
+        "Detailed information regarding school projects can be found in the project page",
+
     date: '2022 - 2025',
     image: '/images/cv/ntnu.png',
     topics: [
-      'Mobilapplikasjonutvikling',
-      'Webapplikasjoner',
-      'Datavisualisering',
-      'Databasestrukturer',
+      'App-Development',
+      'Web-Applications',
+      'Data Visualization',
+      'Database Structures',
     ]
   },
   {
     id: 2,
     title: 'Veøy Møre',
-    subtitle: 'Distribusjontransportør',
-    description: 'Under studietiden ved NTNU Ålesund har jeg hovedsaklig jobbet som distribusjontransportør for Veøy Møre. ' +
-        'Under studietiden har jeg arbeidet mellom en til to ganger i uka og fulle sommrer. ' +
-        'Hovedoppgaven består rundt distribusjon av privat, bedrift og medisinvarer. Ønsker du refernsenummer? Ta kontakt med meg først. ',
-    date: '2023 - Nå',
+    subtitle: 'Distribution Carrier',
+    description: "During my studies at NTNU Ålesund, I mainly worked as a distribution carrier for Veøy Møre." +
+        "Throughout my studies, I worked one to two times a week and full-time during the summers." +
+        "The main task involved the distribution of private, business, and medical goods." +
+        "Would you like a reference number? Please contact me first.",
+    date: '2023 - Now',
     image: '/images/cv/veoy.png',
     referenceName: 'Leif Kåre Nogva',
-    referenceTitle: 'Daglig leder',
+    referenceTitle: 'Operations Manager',
     qualifications: [
-      'Selvstendig Arbeidssdag',
-      'Intense arbeidsdager',
-      'Stort planleggingsansvar',
+      'Independent Workdays',
+      'Intense Workdays',
+      'High Planning Responsibility',
     ],
   },
   {
     id: 3,
     title: 'Insoft AS',
-    subtitle: 'Praksis Oktober 2024',
-    description: 'Praksis i sammenheng med IDATA2505 med over 120 praksistimer hos en IT-Bedrift.' +
-        'Praksisen i Insoft ga meg innsikt i arbeidslivet som en utvikler og ga meg god erfaring i TypeScript og SQL samt det å jobbe i større team.' +
-        'Insoft ga meg en arbeidsdasg på lik linje med andre ansatte så regelmessige standup- og ledermøter var standard i praksisperioden.',
-    date: 'OKT 2024',
+    subtitle: 'Internship October 2024',
+    description: "Internship as part of the IDATA2505 course, with over 120 internship hours at an IT company." +
+        "The internship at Insoft gave me insight into working life as a developer and " +
+        "provided valuable experience with TypeScript and SQL, as well as working in larger teams." +
+        "At Insoft, I had a workday similar to that of other employees, " +
+        "with regular stand-up meetings and leadership meetings as a standard part of the internship.",
+    date: 'OCT 2024',
     image: '/images/cv/insoft.png',
     referenceName: 'Robin Helland',
-    referenceTitle: 'Prosjektkoordinator',
+    referenceTitle: 'Project Coordinator',
     referenceURL: 'https://drive.google.com/file/d/1lgEAOcB7rE2L7oMlv20fOOfEGVtMdQBt/view?usp=sharing',
     qualifications: [
-      'Industrierfaring i Typescript',
-      'Erfaring i store datasystemer',
-      'Arbeid i større teams',
-      'Ukentlige standup- og ledermøter',
+      'Industry experience in TypeScript',
+      'Experience handling large data systems',
+      'Collaboration in larger teams',
+      'Weekly stand-up and leadership meetings',
     ],
   },
   {
     id: 4,
     title: 'Medvind Assistanse ',
-    subtitle: 'Personlig Assistent',
-    description: 'Personlig assistent for barn med celebral parese. ' +
-        'Viktig og utfordrende arbeid der man setter andres behov først for å sikre at de kan ' +
-        'oppleve en hverdag på lik linje med andre. ' +
-        'Givende arbeid som gir god innblikk i de ulike utfordringene mennesker med nedsettelser opplever i hverdagen.',
+    subtitle: 'Personal Assistant',
+    description: "Personal assistant for a child with cerebral palsy." +
+        "Important and challenging work where putting others' needs first " +
+        "is essential to ensure they can experience daily life on equal terms with others." +
+        "A rewarding role that provides valuable insight into the various challenges people with disabilities face in everyday life.",
     date: '2022',
     image: '/images/cv/medvind.png',
     qualifications: [
-      'Innlblikk i en utfordrende hverdag',
-      'Kommunikasjonsbyggende arbeid',
+      'Insight into a challenging daily life',
+      'Communication-building work',
     ],
   },
   {
     id: 5,
     title: 'Teknobingo',
-    subtitle: 'Bingovert',
-    description: 'Ansatt i Teknobingo Heimdal og Orkanger i perioden 2020 - 2022 da jeg var mellom studier. ' +
-        'Inneholdt salg, vasking og vedlikehold på bingohaller. ' +
-        'Selvstending arbeid som krever god kommunikasjonsevne da kunder går igjennom både seier og tap, noen større enn andre.',
+    subtitle: 'Bingo Host',
+    description: "Employed at Teknobingo Heimdal and Orkanger during the period 2020 - 2022 while between studies." +
+        "The role involved sales, cleaning, and maintenance of the bingo halls." +
+        "It was independent work requiring good communication skills, as customers experience both wins and losses, some bigger than others.",
     date: '2020 - 2022',
     image: '/images/cv/teknobingo.png',
     referenceName: 'Camilla Reppe Nordli',
-    referenceTitle: 'Daglig leder',
+    referenceTitle: 'Managing Director',
     qualifications: [
-      'Salgserfaring',
-      'Behandling av varierende kundesituasjoner',
-      'Pengehåndetering',
+      'Sales Experience',
+      'Challengening Customer Situations',
+      'Cash Handling',
     ],
   },
   {
     id: 6,
     title: 'NTNU Trondheim',
-    subtitle: 'Økonomi - Bachelor',
-    description: 'Fullførte 1 år på økonomistudiet ved NTNU i Trondheim.' +
-        ' God innsikt i bedriftsøkonomi. ' +
-        'Alle fag bestått første året før jeg fant ut at en karriere innenfor økonomiske sektorer ikke passet meg. ' +
-        'Emner som rettslære, bedrifts- og samfunnsøkonomi kommer godt med i utvikling av økonomiske programvarer.',
+    subtitle: 'Economy - Bachelor',
+    description: "Completed 1 year of the Economics program at NTNU in Trondheim." +
+        "Gained valuable insight into business economics." +
+        "Passed all subjects in the first year before realizing that a career in economic sectors wasn't the right fit for me." +
+        "Subjects such as law, business economics, and macroeconomics are beneficial in the development of financial software.",
     date: '2019 - 2020',
     image: '/images/cv/ntnu.png',
     topics: [
-      'Bedriftslære',
-      'Makro- og mikroøkonomi',
-      'Rettslære',
-      'Samfunnsøkonomi',
+      'Business Studies',
+      'Macroeconomics and Microeconomics',
+      'Law Studies',
+      'Societal Economics',
     ]
   },
   {
     id: 7,
     title: 'Mio BPA',
-    subtitle: 'Personlig Assistent',
-    description: 'Personlig assistent for eldre mann som nylig ble lammet grunnet skade under fall. ' +
-        'Var med på prossessen i å flytte han fra midlertidlig boplass til et renovert skreddersydd hjem laget for hans behov. ' +
-        'Min tidligere erfaringen innenfor assitanse kom godt med for å sørge at overgangen, prosessen og pleien var av god standard. ',
+    subtitle: 'Personal Assistant',
+    description: "Personal assistant for an elderly man who was recently paralyzed due to an injury from a fall" +
+        "I was involved in the process of moving him from a temporary residence to a renovated, customized home designed for his needs." +
+        "My previous experience in assistance was invaluable in ensuring that the transition, process, and care were of a high standard.'",
     date: '2021',
     image: '/images/cv/mio.png',
     qualifications: [
-      'Pleie og omsorg for krevende bruker',
-      'Tilpassningsutfordringer i forhold til hjemflyttning'
+      'Care and assistance for a high demanding patient',
+      'Adaptation regarding the move to a new home',
     ]
   },
   {
     id: 8,
-    title: 'Mandal Kommune',
-    subtitle: 'Pleiearbeider på kommunale boliger',
-    description: 'Toårig sommerjob som pleieassistent for to brukere på kommunale boliger. ' +
-        'Stort behov for assistanse i hverdagen som følge av blandt annet sterk epilepsi og språkvansker. ' +
-        'Arbeidsoppgaver var blant annet personlig stell, matlaging, vasking, reising. ' +
-        'Ekstremt givende og viktig arbeid som jeg fikk oppleve tidlig i arbeidslivet mitt.',
+    title: 'Lindesnes Kommune',
+    subtitle: 'Careworker at Municipal Housing',
+    description: "Two-year summer job as a care assistant for two residents in municipal housing." +
+        "There was a significant need for assistance in daily life due to conditions such as severe epilepsy and speech difficulties." +
+        "My tasks included personal care, cooking, cleaning, and traveling." +
+        "It was an extremely rewarding and important role that I had the opportunity to experience early in my career.",
     date: '2019 - 2020',
     image: '/images/cv/lindesnes.png',
     qualifications: [
-      'Personlig stell',
-      'Matlaging',
-      'Vasking',
-      'Generell assistanse'
+      'Personal Care',
+      'Cooking',
+      'Cleaning',
+      'General Assistance',
     ]
   },
 ];
@@ -173,18 +176,18 @@ const isSelected = (work) => {
       </div>
       <div class="selected-details">
         <h3 class="selected-details-title" v-if="!selectedWork.title.includes('NTNU')&& selectedWork.referenceTitle">
-          Referanse</h3>
-        <h3 class="selected-details-title" v-if="selectedWork.title.includes('NTNU')">Hovedemner</h3>
+          Reference</h3>
+        <h3 class="selected-details-title" v-if="selectedWork.title.includes('NTNU')">Main Courses</h3>
         <div class="h-divider" v-if="selectedWork.referenceTitle"></div>
         <p class="selected-details-line" style="font-size: 1rem; font-weight: bold">{{ selectedWork.referenceName }}</p>
         <p class="selected-details-line">{{ selectedWork.referenceTitle }}</p>
-        <a v-if="selectedWork.referenceURL" :href="selectedWork.referenceURL" target="_blank">Referansedokument</a>
+        <a v-if="selectedWork.referenceURL" :href="selectedWork.referenceURL" target="_blank">Reference Document</a>
         <ul v-if="selectedWork.title.includes('NTNU')">
           <li v-for="(topic, index) in selectedWork.topics" :key="index">{{ topic }}</li>
         </ul>
         <div class="h-divider" v-if="!selectedWork.title.includes('NTNU') && selectedWork.referenceTitle"></div>
         <h3 class="selected-details-title" style="margin-bottom: 10px" v-if="!selectedWork.title.includes('NTNU')">
-          Utbytte</h3>
+          Key Takeaways</h3>
         <ul>
           <li v-for="(qualification, index) in selectedWork.qualifications" :key="index">{{ qualification }}</li>
         </ul>

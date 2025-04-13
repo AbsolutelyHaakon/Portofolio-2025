@@ -7,10 +7,6 @@ import CV from "@/views/CV.vue";
 const routes = [
     {
         path: '/',
-        redirect: '/home',
-    },
-    {
-        path: '/home',
         name: 'Hjem',
         component: Home,
     },
