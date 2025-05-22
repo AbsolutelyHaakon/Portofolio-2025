@@ -1,6 +1,6 @@
 <script setup>
 import {ref, onMounted} from 'vue';
-const profileImage = '/images/qualifications/profilePic.jpg';
+const profileImage = '/images/qualifications/profilePicV3.jpg';
 const name = 'Håkon Svensen Karlsen';
 const logos = [
   {url: 'https://github.com/AbsolutelyHaakon', image: '/images/external/github.png'},

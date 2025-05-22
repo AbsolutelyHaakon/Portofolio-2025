@@ -3,12 +3,17 @@
 #app {
   justify-content: center;
   font-weight: normal;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  background-color: #ffffff;
+  font-family: "Lexend", sans-serif;
+  background-color: #dedede;
   color: #333;
   z-index: 1;
+  width: 100%;
 }
 
+@font-face {
+  font-family: "cartoonish";
+    src: url('~@/assets/MisterySilent.otf') format("truetype");
+}
 
 @media (min-width: 1024px) {
   body {

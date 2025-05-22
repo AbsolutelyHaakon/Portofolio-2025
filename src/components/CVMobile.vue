@@ -120,7 +120,7 @@ const timelineData = [
   },
   {
     id: 8,
-    title: 'Mandal Kommune',
+    title: 'Lindesnes Kommune',
     subtitle: 'Pleiearbeider på kommunale boliger',
     description: 'Toårig sommerjob som pleieassistent for to brukere på kommunale boliger. ' +
         'Stort behov for assistanse i hverdagen som følge av blandt annet sterk epilepsi og språkvansker. ' +
@@ -146,23 +146,16 @@ const timelineData = [
         <img :src="work.image" alt="Work" class="selected-image" />
         <h2 class="selected-title">{{ work.title }}</h2>
         <h3 class="selected-subtitle">{{ work.subtitle }}</h3>
+        <p class="selected-date">{{ work.date }}</p>
         <p class="selected-description">{{ work.description }}</p>
       </div>
       <div class="selected-details">
-        <h3 class="selected-details-title" v-if="work.title.includes('NTNU')">Hovedemner</h3>
-        <ul v-if="work.title.includes('NTNU')">
-          <li v-for="(topic, index) in work.topics" :key="index">{{ topic }}</li>
-        </ul>
         <h3 class="selected-details-title" v-if="!work.title.includes('NTNU') && work.referenceTitle">Referanse</h3>
         <p class="selected-details-line" style="font-size: 1rem; font-weight: bold">{{ work.referenceName }}</p>
         <p class="selected-details-line">{{ work.referenceTitle }}</p>
         <a v-if="work.referenceURL" :href="work.referenceURL" target="_blank">Referansedokument</a>
-        <h3 class="selected-details-title" style="margin-bottom: 10px" v-if="!work.title.includes('NTNU')">Utbytte</h3>
-        <ul>
-          <li v-for="(qualification, index) in work.qualifications" :key="index">{{ qualification }}</li>
-        </ul>
       </div>
-      <div class="horizontal-line"></div>
+      <div class="horizontal-line" v-if="work.id !== 8"></div>
     </div>
   </div>
 </template>
@@ -170,12 +163,13 @@ const timelineData = [
 <style scoped>
 .cv-container {
   width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   position: relative;
-  margin: 0 0 300px 0;
+  margin: 0 auto 300px auto;
 }
 
 .work-details {
@@ -201,11 +195,11 @@ const timelineData = [
 .selected-image {
   position: absolute;
   width: 100%;
-  max-width: 1200px;
+  max-width: 300px;
   border-radius: 10px;
   opacity: 0.1;
   z-index: -1;
-  top: 60%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-15deg);
 }
@@ -220,6 +214,7 @@ const timelineData = [
   text-align: center;
   font-size: 1.2rem;
   max-width: 600px;
+  display: none;
 }
 
 .selected-details {
@@ -244,6 +239,7 @@ const timelineData = [
 
 .horizontal-line {
   width: 90%;
+  max-width: 400px;
   height: 3px;
   background-color: #3D5B59;
   margin: 20px auto;
@@ -274,31 +270,5 @@ const timelineData = [
     margin-bottom: 100px;
   }
 }
-@media (min-width: 750px) {
-  .work-details {
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
-  }
 
-  .selected-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-  .horizontal-line {
-    display: none;
-  }
-  .selected-description {
-    font-size: 1rem;
-  }
-
-}
 </style>
