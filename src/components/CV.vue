@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 
 const profile = {
   name: "Håkon Svensen Karlsen",
@@ -31,7 +31,8 @@ const profile = {
   ]
 };
 
-const description = "A short professional summary about yourself goes here.";
+const description = "24 Year old graduate at NTNU Ålesund with prior internship practice seeking a full-time position. Worked within health services, distribution, and sales. " +
+    "Working on a training application for aphasia patients. Interested in app- and web development, machine learning, and data visualization. ";
 const education = [
   { school: "NTNU Ålesund", degree: "B.Sc. in Computer Science", year: "2022 - 2025", description: "Primarily focused on creating both mobile- and web applications. Experience in machine learning, data visualization, graphic design & more." },
   { school: "NTNU Trondheim", degree: "B.Sc. in Economy", year: "2019 - 2020", description: "Completed first year in economics bachelor's degree before changing direction." }
@@ -45,10 +46,16 @@ const experience = [
   { company: "Lindesnes Kommune", role: "Care Assistant", years: "2019 - 2020", details: "Care assistant for older gentleman during the summer break." }
 ];
 
+const show = ref(false);
+onMounted(() => {
+  show.value = true;
+});
+
 </script>
 
 <template>
-  <div class="cv-container">
+  <Transition name="fade-slide">
+  <div class="cv-container" v-if="show">
     <aside class="cv-sidebar">
       <div class="name-section">
         <img :src="profile.image" alt="Profile" class="profile-img" />
@@ -62,7 +69,6 @@ const experience = [
         </div>
       </div>
       <div class="documents">
-        <h2>Links</h2>
         <div class="document-grid">
           <a
               v-for="doc in profile.documents"
@@ -128,6 +134,7 @@ const experience = [
       </section>
     </main>
   </div>
+  </Transition>
 </template>
 
 <style scoped>
@@ -140,7 +147,8 @@ const experience = [
 }
 .cv-sidebar {
   width: 35%;
-  background: #dedede;
+  background-image: url('/images/figures/lortext.png');
+  background-size: auto;
   color: #fff;
   padding: 40px 24px;
   display: flex;
@@ -150,6 +158,7 @@ const experience = [
 .name-section {
   width: 100%;
   background-color: #2b513f;
+  background-image: url('/images/figures/greenpattern.png');
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,6 +172,7 @@ const experience = [
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .profile-name {
   font-size: 1.8rem;
@@ -180,6 +190,7 @@ const experience = [
   width: 100%;
   margin: 32px 0;
   background-color: #2b513f;
+  background-image: url('/images/figures/greenpattern.png');
   padding: 24px;
   border-radius: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -302,10 +313,9 @@ const experience = [
 
 .documents {
   width: 100%;
-  background-color: #2b513f;
-  padding: 24px;
+  padding-right: 24px;
   border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: -16px;
 }
 
 .documents h2 {
@@ -346,7 +356,8 @@ const experience = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #1e3a2a;
+  background: #2b513f;
+  background-image: url('/images/figures/greenpattern.png');
   border-radius: 12px;
   padding: 18px 8px 10px 8px;
   text-decoration: none;
@@ -358,10 +369,9 @@ const experience = [
 }
 
 .document-card:hover {
-  background: #2b513f;
+  background: #1e3a2a;
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   transform: translateY(-2px) scale(1.04);
-  border-color: #fff;
 }
 
 .document-icon-wrapper {
@@ -399,6 +409,18 @@ const experience = [
 
 .document-card:hover .document-title {
   display: block;
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+}
+.fade-slide-enter-active {
+  transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+.fade-slide-enter-to {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 @media (max-width: 900px) {

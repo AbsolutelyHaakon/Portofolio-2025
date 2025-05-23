@@ -63,6 +63,11 @@
   width: calc(100% + 12px);
   height: calc(100% + 8px);
 }
+
+.nav-links li .router-link-active {
+  border-bottom: 2px solid #242c2c;
+  padding-bottom: 2px;
+}
 .nav-links li a::before {
   content: "";
   position: absolute;

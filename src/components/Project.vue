@@ -278,6 +278,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <Transition name="fade-in-up">
   <div class="project-detail" v-if="project.title">
     <div class="image-container"
          :style="{ '--project-color': project.color[0], backgroundColor: project.primarycolor }">
@@ -312,6 +313,7 @@ onMounted(() => {
       </div>
     </div>
   </div>
+  </Transition>
   <Wave :colors="project.color"/>
   <ImageGallery :images="project.images" v-if="project.images && project.images.length > 0"
                 :background-color="project.color[2]" :text-color="project.color[3]" :title-color="project.color[0]"/>
@@ -553,6 +555,18 @@ p {
     margin-left: 0;
   }
 
+}
+
+ .fade-in-up-enter-active {
+   transition: opacity 1.5s cubic-bezier(0.23, 1, 0.32, 1), transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+ }
+.fade-in-up-enter-from {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.fade-in-up-enter-to {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 1050px) {
